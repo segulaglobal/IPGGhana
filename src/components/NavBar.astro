@@ -8,7 +8,7 @@ import LogoWhite from "./../assets/Logo-white.svg";
 
 
 <div class="nav-overlay"></div>
-<nav>
+<nav class="nav-bar">
     <div class="container wrapper">
         <div class="nav-container">
             <a href="/" class="logo">
@@ -27,7 +27,7 @@ import LogoWhite from "./../assets/Logo-white.svg";
                     <a href="/services" class="nav-link">Our Services</a>
                 </li>
                 <li>
-                    <a href="/contact" class="nav-contact">Contact Us</a>
+                    <a href="/contact" class="nav-link">Contact Us</a>
                 </li>
             </ul>
             <!-- End of navigation menu -->
@@ -60,10 +60,11 @@ import LogoWhite from "./../assets/Logo-white.svg";
         bottom: 0;
         z-index: 8;
         backdrop-filter: blur(10px);
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: rgba(35, 0, 7, 0.521);
         pointer-events: initial;
         opacity: 0;
         pointer-events: none;
+        transition: .2s;
     
         &.show {
             opacity: 1;
@@ -78,7 +79,7 @@ import LogoWhite from "./../assets/Logo-white.svg";
         display: block;
         backdrop-filter: blur(5px);
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        background-color: rgba(255, 255, 255, .7);
+        background-color: var(--clr-black);
         position: fixed;
         top: 0;
         left: 0;
@@ -111,11 +112,12 @@ import LogoWhite from "./../assets/Logo-white.svg";
         .nav-btn {
             z-index: 21;
             cursor: pointer;
+            transition: .3s;
     
             .lines {
-                width: 3.5rem;
-                height: .4rem;
-                background-color: var(--clr-gray-dark);
+                width: 3rem;
+                height: .2rem;
+                background-color: var(--clr-white);
                 transition: .4s;
                 border-radius: 2px;
     
@@ -124,6 +126,7 @@ import LogoWhite from "./../assets/Logo-white.svg";
                 }
             }
             &.close {
+                transform: rotate(180deg);
                 
                 .lines {
         
@@ -140,6 +143,8 @@ import LogoWhite from "./../assets/Logo-white.svg";
             }
         }
     
+
+
         .nav-contact {
             display: inline-block;
             padding: .7rem 2rem;
@@ -193,9 +198,9 @@ import LogoWhite from "./../assets/Logo-white.svg";
     
             .nav-link {
                 display: inline-block;
-                font-size: 1.5rem;
+                font-size: 1.2rem;
                 font-weight: 600;
-                color: var(--clr-gray-dark);
+                color: var(--clr-white);
                 padding: 1rem;
                 position: relative;
                 z-index: 1;
@@ -203,7 +208,8 @@ import LogoWhite from "./../assets/Logo-white.svg";
     
                 &:hover,
                 &:focus {
-                    transform: scale(.9);
+                    transform: scale(.88);
+                    color: var(--clr-red);
                 }
     
                 &:hover::after,
@@ -243,23 +249,26 @@ import LogoWhite from "./../assets/Logo-white.svg";
     
             .nav-list {
                 width: 100%;
-                height: 60vh;
+                height: 100vh;
                 position: fixed;
                 top: 0;
                 left: 0;
                 // z-index: ;
                 display: flex;
+                padding-top: 60px;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                background-image: linear-gradient(to right, var(--clr-lemon), var(--clr-lemon-dark));
-                border-radius: 0 0 3rem 3rem;
-                box-shadow: 0 .3rem 1rem rgba(0, 0, 0, 0.277);
                 transition: .4s;
-                transform: translate3d(0, -110%, 0);
+                opacity: 0;
+                scale: 0;
+                pointer-events: none;
     
                 &.show {
-                    transform: translate3d(0, 0, 0);
+                    opacity: 1;
+                    transition-delay: .2s;
+                    scale: 1;
+                    pointer-events: initial;
                 }
             }
     
@@ -279,7 +288,6 @@ import LogoWhite from "./../assets/Logo-white.svg";
                 padding: 1rem 3rem;
                 overflow: hidden;
                 border-bottom: 1px solid var(--clr-white);
-                border-radius: 3rem;
     
                 &:hover {
                     color: var(--clr-lemon);
