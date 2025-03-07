@@ -1,11 +1,310 @@
 ---
 
+import { Image } from "astro:assets";
+import LogoWhite from "./../assets/Logo-white.svg";
+
+
 ---
 
 
-
+<div class="nav-overlay"></div>
 <nav>
     <div class="container wrapper">
-        
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <Image src={LogoWhite} alt="IPG Ghana Logo"/>
+            </a>
+
+            <!-- navigation Menu -->
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="/" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/about" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/services" class="nav-link">Our Services</a>
+                </li>
+                <li>
+                    <a href="/contact" class="nav-contact">Contact Us</a>
+                </li>
+            </ul>
+            <!-- End of navigation menu -->
+
+            <!-- navigation button -->
+            <div class="nav-btn">
+                <div class="lines"></div>
+                <div class="lines"></div>
+                <div class="lines"></div>
+            </div>
+            <!-- End of navigation button -->
+        </div>
     </div>
 </nav>
+
+
+
+
+
+<style lang="scss">
+
+
+    .nav-overlay {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 8;
+        backdrop-filter: blur(10px);
+        background-color: rgba(0, 0, 0, 0.1);
+        pointer-events: initial;
+        opacity: 0;
+        pointer-events: none;
+    
+        &.show {
+            opacity: 1;
+            pointer-events: initial;
+        }
+    }
+    
+    
+    .nav-bar {
+        width: 100%;
+        height: 100px;
+        display: block;
+        backdrop-filter: blur(5px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        background-color: rgba(255, 255, 255, .7);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 20;
+        
+        
+        
+        .nav-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        
+        // navigation logo
+        .logo {
+            width: 150px;
+            transition: .2s;
+        
+            &:hover {
+                transform: scale(.95);
+            }
+        }
+        // End of logo
+    
+    
+        // ============= Nav Button  =================
+        .nav-btn {
+            z-index: 21;
+            cursor: pointer;
+    
+            .lines {
+                width: 3.5rem;
+                height: .4rem;
+                background-color: var(--clr-gray-dark);
+                transition: .4s;
+                border-radius: 2px;
+    
+                &:not(:last-child) {
+                    margin-bottom: .5rem;
+                }
+            }
+            &.close {
+                
+                .lines {
+        
+                    &:nth-child(1) {
+                        transform: rotate(-45deg) translate(-8px, 6px);
+                    }
+                    &:nth-child(2) {
+                        opacity: 0;
+                    }
+                    &:nth-child(3) {
+                        transform: rotate(45deg) translate(-7px, -7px);
+                    }
+                }
+            }
+        }
+    
+        .nav-contact {
+            display: inline-block;
+            padding: .7rem 2rem;
+            font-size: 1.4rem;
+            font-weight: bold;
+            background-color: var(--clr-gray-dark);
+            color: var(--clr-white);
+            border-radius: 2rem;
+            transition: .2s;
+    
+            &:hover, 
+            &:focus {
+                background-color: var(--clr-white);
+                color: var(--clr-gray-dark);
+                transform: scale(.9);
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // =========================== media Queriies ==========================
+    @media screen and (min-width: 768px) {
+    
+        .nav-btn {
+            display: none;
+        }
+    
+        .nav-list {
+            display: flex;
+            height: 100%;
+            // width: 100%;
+            align-items: center;
+    
+            .nav-item {
+    
+                &:not(:last-child) {
+                    margin-right: 1rem;
+                }
+            }
+    
+            .nav-link {
+                display: inline-block;
+                font-size: 1.5rem;
+                font-weight: 600;
+                color: var(--clr-gray-dark);
+                padding: 1rem;
+                position: relative;
+                z-index: 1;
+                transition: .2s;
+    
+                &:hover,
+                &:focus {
+                    transform: scale(.9);
+                }
+    
+                &:hover::after,
+                &:focus::after {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+                &::after {
+                    content: "";
+                    width: 100%;
+                    height: .5rem;
+                    background-color: var(--clr-lemon);
+                    position: absolute;
+                    left: 0;
+                    top: 100%;
+                    border-radius: .5rem;
+                    transition: .2s;
+                    z-index: -1;
+                    transform-origin: center;
+                    transform: scale(0);
+                }
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    // =================== Desktop =-====================
+    @media screen and (max-width: 767px) {
+        
+        .nav-bar {
+            z-index: 100!important;
+    
+            .nav-list {
+                width: 100%;
+                height: 60vh;
+                position: fixed;
+                top: 0;
+                left: 0;
+                // z-index: ;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                background-image: linear-gradient(to right, var(--clr-lemon), var(--clr-lemon-dark));
+                border-radius: 0 0 3rem 3rem;
+                box-shadow: 0 .3rem 1rem rgba(0, 0, 0, 0.277);
+                transition: .4s;
+                transform: translate3d(0, -110%, 0);
+    
+                &.show {
+                    transform: translate3d(0, 0, 0);
+                }
+            }
+    
+            .nav-item {
+    
+                &:not(:last-child) {
+                    margin-bottom: 2rem;
+                }
+            }
+    
+            .nav-link {
+                display: inline-block;
+                color: var(--clr-white);
+                position: relative;
+                z-index: 1;
+                transition: .4s;
+                padding: 1rem 3rem;
+                overflow: hidden;
+                border-bottom: 1px solid var(--clr-white);
+                border-radius: 3rem;
+    
+                &:hover {
+                    color: var(--clr-lemon);
+                    transform: scale(.90);
+                }
+    
+                &:hover::after {
+                    top: 0;
+                }
+    
+                &::after {
+                    content: "";
+                    background-color: var(--clr-white);
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    z-index: -1;
+                    transition: .4s;
+                }
+            }
+    
+        }
+    }
+    
+    
+    </style>
