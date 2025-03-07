@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import 'animate.css';
 @import "./container.css";
 @import "./components/buttons.css";
 
