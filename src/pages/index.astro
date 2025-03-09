@@ -1,13 +1,13 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
+import MainLayout from "../layouts/MainLayout.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <MainLayout>
-	<!-- Coming soon page -->
-	<section class="coming-soon">
+  <!-- Coming soon page -->
+  <!-- <section class="coming-soon">
 		<div class="yellow"></div>
 		<div class="green"></div>
 		<div class="container wrapper">
@@ -17,60 +17,70 @@ import MainLayout from '../layouts/MainLayout.astro';
 				<a href="#" class="btn btn-primary">Send an email</a>
 			</div>
 		</div>
-	</section>
-	<!-- End of coming soon page -->
+	</section> -->
+  <!-- End of coming soon page -->
+
+  <!-- This is hero section of the home page -->
+   <section class="section-hero">
+	   <button
+		 data-modal-target="exampleModal"
+		 data-modal-toggle="exampleModal"
+		 class="bg-blue-500 text-white px-4 py-2 rounded"
+	   >
+		 Open Modal
+	   </button>
+   </section>
+  <!-- End of hero section of the home page -->
 </MainLayout>
 
-
-
-
-
-
-
-
-
 <style lang="scss">
+  .coming-soon {
+    width: 100%;
+    height: calc(100vh - 3.5rem);
+    background-color: var(--clr-black);
+    color: var(--clr-white);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
 
-.coming-soon {
-	width: 100%;
-	height: calc(100vh - 3.5rem);
-	background-color: var(--clr-black);
-	color: var(--clr-white);
-	position: relative;
-	z-index: 1;
-	overflow: hidden;
+    .coming-container {
+      width: 100%;
+      height: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
 
-	.coming-container {
-		width: 100%;
-		height: 100%;
-		max-width: 900px;
-		margin: 0 auto;
-		text-align: center;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		gap: 2rem;
-	}
+    .yellow,
+    .green {
+      width: 30vw;
+      height: 30vw;
+      border-radius: 50%;
+      position: absolute;
+      z-index: -1;
+      filter: blur(5.5rem);
+      opacity: 0.5;
+    }
+    .yellow {
+      background-color: var(--clr-yellow);
+      right: -10vw;
+      top: 0;
+    }
+    .green {
+      background-color: var(--clr-green);
+      bottom: 0;
+      left: -10vw;
+    }
+  }
 
-	.yellow, .green {
-		width: 30vw;
-		height: 30vw;
-		border-radius: 50%;
-		position: absolute;
-		z-index: -1;
-		filter: blur(5.5rem);
-		opacity: .5;
-	}
-	.yellow {
-		background-color: var(--clr-yellow);
-		right: -10vw;
-		top: 0;
-	}
-	.green {
-		background-color: var(--clr-green);
-		bottom: 0;
-		left: -10vw;
-	}
-}
+  // Section hero
+  .section-hero {
+	padding-block: 15rem;
+  }
+  // End of section hero
 </style>
