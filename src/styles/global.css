@@ -1,16 +1,9 @@
-@import "tailwindcss";
 @import 'animate.css';
 @import "./container.css";
 @import "./components/buttons.css";
+@import "tailwindcss";
 
-/* Import Flowbite Theme */
-@import "flowbite/src/themes/default";
 
-/* Import Flowbite Plugin */
-@plugin "flowbite/plugin";
-
-/* Configure Flowbite Source Files */
-@source "../../node_modules/flowbite";
 
 
 *,
