@@ -1,8 +1,7 @@
 ---
-title: "Daniel Sarkodie Duah Shares Insights on Insurtech: The Future of
-  Insurance in Ghana"
+title: "Lorem Ipsum sit amet sit thing"
 pubDate: 2024-04-15T17:06:00.000Z
-author: iRiskManagement.net
+author: lorem ipsum sit
 image: /src/content/posts/images/1712938495012.jpeg
 tags:
   - post
@@ -35,5 +34,3 @@ At iRisk Management Limited, we are proud to have Daniel as part of our team, br
 Daniel Sarkodie Duah is the Transformation & Partnerships Manager at iRisk Management Limited, with over half a decade of experience in the Ghanaian insurance industry. He holds a Diploma in Insurance from the Ghana Insurance College, ALX, and is a Google Certified Professional Data Analyst. Daniel is also a member of the Chartered Insurance Institute Ghana and has a proven track record of driving innovation and growth in the insurance sector.
 
 
-
-**Read the full article here:** https://thebftonline.com/2024/04/15/could-insurtech-overtake-traditional-insurance/

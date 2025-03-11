@@ -1,5 +1,8 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import BlogCard from "../components/BlogCard.astro";
+
+
 import { Image } from "astro:assets";
 import aboutImage from "../assets/about-img.jpg";
 import testImage from "../assets/test-img.png";
@@ -10,8 +13,20 @@ import partner3 from "../assets/partner-3.png";
 import partner4 from "../assets/partner-4.png";
 import partner5 from "../assets/partner-5.png";
 import partner6 from "../assets/partner-6.png";
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+
+
+
+import { HOMEPAGE_ARTICLES_LIMIT } from "../constants";
+
+
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content"
+
+const posts: CollectionEntry<'posts'>[] = (await getCollection('posts')).sort((a:CollectionEntry<'posts'>, b:CollectionEntry<'posts'>) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const mostRecentArticle: CollectionEntry<'posts'> = posts[0];
+const otherArticles: CollectionEntry<'posts'>[] = posts.slice(1);
+
 ---
 
 <MainLayout>
@@ -220,84 +235,24 @@ import partner6 from "../assets/partner-6.png";
   </section>
   <!-- End of section Partners -->
 
-  <!--Start of Blog Section -->
-  <section class="section-blog">
-    <div class="container wrapper bg-red-200 mx-auto px-6 py-20 text-center">
-      <h2 class="text-3xl font-bold text-black mb-14">Blogs</h2>
-      <div
-        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-center"
-      >
-        <!-- Blog Card 1 -->
-        <a
-          href="/blog-1"
-          class="block transform transition duration-300 hover:scale-105"
-        >
-          <div
-            class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl"
-          >
-            <img
-              src="/images/blog-image.jpg"
-              alt="Blog Image"
-              class="w-full h-56 object-cover"
-            />
-            <div class="p-4">
-              <p class="text-sm font-semibold">
-                Lorem Ipsum sit amet sit dollarLorem Ipsum sit amet sit dollar
-              </p>
-            </div>
-          </div>
-        </a>
-        <!-- Blog Card 2 -->
-        <a
-          href="/blog-2"
-          class="block transform transition duration-300 hover:scale-105"
-        >
-          <div
-            class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl"
-          >
-            <img
-              src="/images/blog-image.jpg"
-              alt="Blog Image"
-              class="w-full h-56 object-cover"
-            />
-            <div class="p-4">
-              <p class="text-sm font-semibold">
-                Lorem Ipsum sit amet sit dollarLorem Ipsum sit amet sit dollar
-              </p>
-            </div>
-          </div>
-        </a>
-        <!-- Blog Card 3 -->
-        <a
-          href="/blog-3"
-          class="block transform transition duration-300 hover:scale-105"
-        >
-          <div
-            class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl"
-          >
-            <img
-              src="/images/blog-image.jpg"
-              alt="Blog Image"
-              class="w-full h-56 object-cover"
-            />
-            <div class="p-4">
-              <p class="text-sm font-semibold">
-                Lorem Ipsum sit amet sit dollarLorem Ipsum sit amet sit dollar
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="mt-14">
-        <a
-          href="/blogs"
-          class="bg-red-500 text-white px-6 py-4 rounded-2xl shadow-md hover:bg-red-600 cursor-pointer"
-          >Read More</a
-        >
-      </div>
-    </div>
-  </section>
-  <!--End of Blog Section -->
+<!-- ==================== Section News and Blog ============================= -->
+
+<section class="section-news py-40">
+
+	<section class="section-news py-20">
+			<div class="container wrapper">
+					<h2 class="heading-secondary mb-12">News &amp; Blog</h2>
+					<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+							{otherArticles.slice(0, HOMEPAGE_ARTICLES_LIMIT).map(
+									article => (
+											<BlogCard post={article} />
+									)
+							)}
+					</div>
+					<a href="/blog" class="btn btn-primary mt-12">More News</a>
+			</div>
+	</section>
+	<!-- end of news and blog -->
 
   <style lang="scss">
     .coming-soon {

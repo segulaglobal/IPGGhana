@@ -1,18 +1,16 @@
 ---
-title: CEO of iRisk Management Limited named Young Insurance Professional of the
-  Year at the 2022 Ghana Insurance Excellence Awards
+title: lorem Ipsum sit amet thing here
 pubDate: 2023-09-04T11:03:00.000Z
-author: iRisk Management
+author: Lorem Author
 image: /src/content/posts/images/ciig-landscape.jpeg
 tags:
-  - CIIG Awards
+  - Lorem ipssum
 rating: 5
 ---
 iRisk Management Limited, a leading insurance brokerage and risk management consulting firm, is thrilled to announce the remarkable accomplishment of our CEO, Sheila Wristberg, who has been honored with the prestigious title of "Young Insurance Professional of the Year 2022" at the Ghana Insurance Excellence Awards 2022.
 
 The 3rd edition of the Ghana Insurance Excellence Awards, the insurance industry’s official award ceremony took place on the 26th of August,2023 at the Movenpick Ambassador Hotel. This event was attended by industry luminaries, top executives, and notable professionals from across the insurance landscape. 
 
-![](/src/content/posts/images/ciig2.jpg "Sheila Wristberg")
 
 
 
