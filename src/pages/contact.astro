@@ -1,0 +1,115 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+
+
+---
+
+<MainLayout>
+
+    <!-- This is hero section of the contact page -->
+    <section class="section-hero">
+        <div class="container wrapper">
+            <div class="h-full flex flex-col text-center items-center justify-center">
+                <h1 class="my-5 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
+                    Contact the foundation
+                </h1>
+                <p class="mb-8 text-lg font-normal text-gray-200 lg:text-xl sm:px-16 xl:px-48">
+                    Get in touch using the details below.
+                </p>
+            </div>
+    </section>
+    <!-- End of hero section of the contact page -->
+
+    <!-- Start of Contact details section -->
+     <section class="section-contactDetails bg-white">
+	<div class="container wrapper">
+		<div class=" px-4 mx-auto max-w-screen-xl lg:px-6">
+			<div class="space-y-8 grid md:grid md:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-12 md:space-y-0">
+
+                <!--First Card -->
+				<div class="contact">
+					<div class="contact-icon flex justify-center items-center mb-4 h-10 rounded-full bg-primary-100 lg:h-12 dark:bg-primary-900">
+						<!-- <svg class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> -->
+					</div>
+					<h3 class="mb-2 text-2xl font-bold my-5">London Office</h3>
+					<div class="text-lg my-3">
+                        <p>35 Portman Square</p>
+                        <p>London</p>
+                        <p>W1H 6LR</p>
+                        <p>United Kingdom</p>
+                    </div>
+                    <a href="mailto:carbellsarfo@gmail.com">carbellsarfo@gmail.com</a>
+				</div>				
+
+                <!--Second Card -->
+				<div class="contact">
+					<div class="contact-icon flex justify-center items-center mb-4 h-10 rounded-full bg-primary-100 lg:h-12 dark:bg-primary-900">
+						<!-- <svg class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> -->
+					</div>
+					<div class="enquiries my-3">
+                        <h3 class="text-2xl font-bold">Media Enquiries</h3>
+                        <p>Please email: 
+                            <a href="mailto:carbellsarfo@gmail.com">carbellsarfo@gmail.com</a>
+                        </p>
+                    </div>
+					<div class="mt-5">
+                        <h3 class="text-2xl font-bold">Lorem Ipsum sit amet</h3>
+                        <p>Please email: 
+                            <a href="mailto:carbellsarfo@gmail.com">carbellsarfo@gmail.com</a>
+                        </p>
+                    </div>
+				</div>				
+			</div>
+		</div>
+	</div>
+  </section>
+     <!-- End of Contact details section -->
+
+
+  <style>
+     /* Section hero */
+  .section-hero {
+    width: 100%;
+    height: 50vh;
+    margin-top: 100px;
+    background-color: var(--clr-red);
+    background-size: cover;
+    background-position: top;
+  }
+  /* End of section hero */
+
+  .section-contactDetails {
+	padding-block: 5rem;
+
+	.contact {
+        background-color: var(--clr-yellow-light);
+		padding: 2rem;
+		border-radius: 1rem;
+		transition: .3s;
+		box-shadow: 0 .3px 5px rgba(0, 0, 0, 0.125);
+
+		&:hover {
+			transform: scale(.95);
+		}
+
+		&:hover .contact-icon {
+			transform: scale(1.2);
+			color: var(--clr-yellow-light);
+			background-color: var(--clr-yellow);
+		}
+
+		.contact-icon {
+			width: 3rem;
+			height: 3rem;
+			border: 2px solid var(--clr-yellow);
+			color: var(--clr-green);
+			transition: .3s;
+		}
+
+        a {
+            color: var(--clr-red);
+        }
+	}
+
+  </style>
+</MainLayout>
