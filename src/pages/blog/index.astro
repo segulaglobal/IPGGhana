@@ -1,0 +1,40 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import BlogCard from "../../components/BlogCard.astro";
+import Preloader from "../../components/Preloader.astro";
+import { getCollection } from 'astro:content'
+import type { CollectionEntry } from "astro:content";
+
+const posts: CollectionEntry<'posts'>[] = (await getCollection('posts')).sort((a:CollectionEntry<'posts'>, b:CollectionEntry<'posts'>) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+---
+
+<MainLayout title="iRisk | Newsletter">
+
+<!-- <Preloader></Preloader> -->
+
+
+    <section class="pt-40 pb-48">
+        <div class="container wrapper">
+            <h1 class="heading-tertiary text-2xl py-3 mb-20">All Articles</h1>
+            <!-- Main Grid -->
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+                {posts.map(article => (
+                    <BlogCard post={article} />
+                ))}          
+            </div>
+          
+              <!-- Pagination -->
+              <!-- <div class="flex justify-between mt-10">
+                <a href="#" class="inline-block bg-indigo-100 px-3 py-2 hover:bg-indigo-600 hover:text-white rounded-lg">
+                  Previous
+                </a>
+                <a href="#"
+                 class="inline-block bg-indigo-100 px-3 py-2 hover:bg-indigo-600 hover:text-white rounded-lg">
+                  Next
+                </a>
+              </div> -->
+        </div>
+    </section>
+
+</MainLayout>
