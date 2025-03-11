@@ -1,0 +1,36 @@
+---
+
+import BlogCard from "../components/BlogCard.astro";
+
+
+import { HOMEPAGE_ARTICLES_LIMIT } from "../constants";
+
+
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content"
+
+const posts: CollectionEntry<'posts'>[] = (await getCollection('posts')).sort((a:CollectionEntry<'posts'>, b:CollectionEntry<'posts'>) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const mostRecentArticle: CollectionEntry<'posts'> = posts[0];
+const otherArticles: CollectionEntry<'posts'>[] = posts.slice(1);
+
+---
+
+
+
+
+<!-- ==================== Section News and Blog ============================= -->
+<section class="section-news py-20">
+    <div class="container wrapper">
+            <h2 class="heading-secondary mb-12">News &amp; Blog</h2>
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    {otherArticles.slice(0, HOMEPAGE_ARTICLES_LIMIT).map(
+                            article => (
+                                    <BlogCard post={article} />
+                            )
+                    )}
+            </div>
+            <a href="/blog" class="btn btn-primary mt-12">More News</a>
+    </div>
+</section>
+<!-- end of news and blog -->

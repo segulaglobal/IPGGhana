@@ -1,0 +1,41 @@
+---
+import { formatDate } from '../utils';
+import type { CollectionEntry, getEntryBySlug } from "astro:content";
+import { Image } from 'astro:assets';
+
+// const { article } = Astro.props;
+
+type Props = {
+    post: CollectionEntry<'posts'>;
+}
+
+const {post} = Astro.props;
+---
+
+
+<div class="">
+    <div class="bg-white rounded-lg overflow-hidden shadow-lg scale-in">
+        <a href={'/blog/' + post.slug}>
+            <Image
+            src={post.data.image}
+            alt="Article Image"
+            width={600}
+            height={600 / 1.5}
+            class="w-full h-48 object-cover hover:opacity-75 transition duration-300 ease-in-out"
+            />
+        </a>
+        <div class="p-6">
+            <h2 class="text-2xl font-semibold mb-2">
+            <a href={'/blog/' + post.slug}> {post.data.title}</a>
+            </h2>
+            <p class="text-gray-600 text-sm mb-4">{formatDate(post.data.pubDate)}</p>
+            <div class="flex flex-wrap gap-2">
+            {post.data.tags.map((tag: string, index: number) => (
+                <span class={index % 2 === 0 ? "px-2 py-1 bg-blue-500 text-white rounded-full text-xs hover:opacity-90" : "px-2 py-1 bg-purple-500 text-white rounded-full text-xs hover:opacity-90"}>
+                    <a href={'/blog/tags/' + tag}> {tag} </a>
+                    </span>
+            ))}
+            </div>
+        </div>
+    </div>
+</div>
