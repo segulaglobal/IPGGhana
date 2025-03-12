@@ -228,6 +228,22 @@ import partner6 from "../assets/partner-6.png";
           <Image src={partner5} alt="Partner 5"/>
           <Image src={partner6} alt="Partner 6"/>
         </div>
+        <div class="logo_items">
+          <Image src={partner1} alt="Partner 1"/>
+          <Image src={partner2} alt="Partner 2"/>
+          <Image src={partner3} alt="Partner 3"/>
+          <Image src={partner4} alt="Partner 4"/>
+          <Image src={partner5} alt="Partner 5"/>
+          <Image src={partner6} alt="Partner 6"/>
+        </div>
+        <div class="logo_items">
+          <Image src={partner1} alt="Partner 1"/>
+          <Image src={partner2} alt="Partner 2"/>
+          <Image src={partner3} alt="Partner 3"/>
+          <Image src={partner4} alt="Partner 4"/>
+          <Image src={partner5} alt="Partner 5"/>
+          <Image src={partner6} alt="Partner 6"/>
+        </div>
       </div>
 </div>
 
@@ -293,7 +309,7 @@ import partner6 from "../assets/partner-6.png";
       background-image: url(../assets/hero-bg.jpg);
       background-size: cover;
       background-position: top;
-	  background-attachment: fixed;
+	    background-attachment: fixed;
     }
     // End of section hero
 
@@ -377,7 +393,7 @@ import partner6 from "../assets/partner-6.png";
               transform: translateX(0);
             }
             to {
-              transform: translateX(-100%);
+              transform: translateX(-70%);
             }
           }
 
@@ -390,14 +406,14 @@ import partner6 from "../assets/partner-6.png";
 
           .logo_track {
             display: flex;
-            width: 200%; /* Ensures both logo_items fit in a single flex container */
+            width: 200%;
             animation: slides 10s linear infinite;
           }
 
           .logo_items {
             display: flex;
             margin: 0 2rem;
-            gap: 5rem;
+            gap: 2rem;
             flex-shrink: 0;
           }
 
