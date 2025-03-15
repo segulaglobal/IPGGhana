@@ -210,16 +210,44 @@ import partner6 from "../assets/partner-6.png";
           unde tempore
         </p>
       </div>
-      <div
-        class="grid md:grid md:grid-cols-2 grid-cols-2 lg:grid-cols-3 gap-4 md:gap-12 md:space-y-0text-center justify-items-center"
-      >
-        <Image src={partner1} alt="partner-1" class="partner" />
-        <Image src={partner2} alt="partner-2" class="partner" />
-        <Image src={partner3} alt="partner-3" class="partner" />
-        <Image src={partner4} alt="partner-4" class="partner" />
-        <Image src={partner5} alt="partner-5" class="partner" />
-        <Image src={partner6} alt="partner-6" class="partner" />
+      <div class="logos">
+      <div class="logo_track">
+        <div class="logo_items">
+          <Image src={partner1} alt="Partner 1"/>
+          <Image src={partner2} alt="Partner 2"/>
+          <Image src={partner3} alt="Partner 3"/>
+          <Image src={partner4} alt="Partner 4"/>
+          <Image src={partner5} alt="Partner 5"/>
+          <Image src={partner6} alt="Partner 6"/>
+        </div>
+        <div class="logo_items">
+          <Image src={partner1} alt="Partner 1"/>
+          <Image src={partner2} alt="Partner 2"/>
+          <Image src={partner3} alt="Partner 3"/>
+          <Image src={partner4} alt="Partner 4"/>
+          <Image src={partner5} alt="Partner 5"/>
+          <Image src={partner6} alt="Partner 6"/>
+        </div>
+        <div class="logo_items">
+          <Image src={partner1} alt="Partner 1"/>
+          <Image src={partner2} alt="Partner 2"/>
+          <Image src={partner3} alt="Partner 3"/>
+          <Image src={partner4} alt="Partner 4"/>
+          <Image src={partner5} alt="Partner 5"/>
+          <Image src={partner6} alt="Partner 6"/>
+        </div>
+        <div class="logo_items">
+          <Image src={partner1} alt="Partner 1"/>
+          <Image src={partner2} alt="Partner 2"/>
+          <Image src={partner3} alt="Partner 3"/>
+          <Image src={partner4} alt="Partner 4"/>
+          <Image src={partner5} alt="Partner 5"/>
+          <Image src={partner6} alt="Partner 6"/>
+        </div>
       </div>
+</div>
+
+
     </div>
   </section>
   <!-- End of section Partners -->
@@ -281,7 +309,7 @@ import partner6 from "../assets/partner-6.png";
       background-image: url(../assets/hero-bg.jpg);
       background-size: cover;
       background-position: top;
-	  background-attachment: fixed;
+	    background-attachment: fixed;
     }
     // End of section hero
 
@@ -357,14 +385,49 @@ import partner6 from "../assets/partner-6.png";
       }
     }
 
-    // Section Partners
     .section-partners {
-      padding: 7rem 0 7rem;
+          padding: 7rem 0;
+    
+            @keyframes slides {
+            from {
+              transform: translateX(0);
+            }
+            to {
+              transform: translateX(-70%);
+            }
+          }
 
-      .partner {
-        max-width: 200px;
-        display: inline-block;
-      }
-    }
+          .logos {
+            overflow: hidden;
+            padding: 30px 0;
+            position: relative;
+            white-space: nowrap;
+          }
+
+          .logo_track {
+            display: flex;
+            width: 200%;
+            animation: slides 10s linear infinite;
+          }
+
+          .logo_items {
+            display: flex;
+            margin: 0 2rem;
+            gap: 2rem;
+            flex-shrink: 0;
+          }
+
+          .logos:hover .logo_track {
+            animation-play-state: paused;
+          }
+
+          .logo_items img {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+          }
+
+  }
+
   </style>
 </MainLayout>
