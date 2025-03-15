@@ -1,0 +1,66 @@
+---
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import MainLayout from '../../layouts/MainLayout.astro';
+import { Image } from 'astro:assets';
+
+export const getStaticPaths = async () => {
+    const allPeoples = await getCollection("people");
+    const paths = allPeoples.map(people => {
+        return {
+            params: {
+                slug: people.slug
+            },
+            props: {
+                people
+            }
+        }
+    })
+    return paths;
+}
+
+type Props = {
+    people: CollectionEntry<"allPeoples">
+}
+const {people} = Astro.props;
+const {Content} = await people.render();
+
+---
+
+
+<MainLayout>
+
+    <section class="py-36 section-person">
+        <div class="container wrapper">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="img">
+                    <Image src={people.data.image} alt={people.data.name} width={600}
+                    height={800} class="w-full h-80 object-cover" />
+                </div>
+                <div class="text md:col-span-2">
+                    <h2 class="mb-16 text-4xl tracking-tight font-extrabold text-gray-900">
+                        {people.data.name}
+                      </h2>
+                    <div class="prose overflow-visible relative mb-20 mx-auto">
+                        <Content />
+                    </div>
+                    <a href="/people" class="btn btn-secondary">&leftarrow; Back</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</MainLayout>
+
+
+
+
+<style>
+    .section-person {
+        
+        p {
+            margin-bottom: 1rem;
+        }
+    }
+</style>

@@ -1,0 +1,97 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+
+
+const { people } = Astro.props
+
+interface Props {
+  people: CollectionEntry<'people'>
+}
+---
+
+
+
+<div class="people">
+  <a href={'/people/' + people.slug}>
+    <div class="people-img">
+      <Image src={people.data.image} alt={people.data.name} width={600}
+height={600 / 1.5}
+class="w-full h-72 object-cover hover:opacity-75 transition duration-300 ease-in-out" />
+    </div>
+    <div class="people-text">
+      <h3>{people.data.name}</h3>
+      <p>{people.data.title}</p>
+    </div>
+    <ul class="people-social">
+      <li>
+        <a href={people.data.email} class="people-link">
+          <i class="fa-solid fa-envelope" />
+        </a>
+      </li>
+      <li>
+        <a href={people.data.linkedin} class="people-link">
+          <i class="fa-brands fa-linkedin-in" />
+        </a>
+      </li>
+    </ul>
+  </a>
+</div>
+
+
+  <style>
+     .people {
+    text-align: center;
+    width: 100%;
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(0.95);
+    }
+    &:hover > .people-social {
+      transform: scale(1.1);
+
+      a {
+        color: var(--clr-white);
+        background-color: var(--clr-gray-light);
+      }
+    }
+
+    .people-text {
+      margin: 1rem 0;
+
+      h3 {
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+      p {
+        color: #909090;
+      }
+    }
+    /* people social icons */
+    .people-social {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s;
+
+      li {
+        &:not(:last-child) {
+          margin-right: 1rem;
+        }
+      }
+      .people-link {
+        display: flex;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 0.5rem;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--clr-gray-light);
+        color: var(--clr-gray-light);
+        background-color: var(--clr-white);
+        transition: 0.3s;
+      }
+    }
+  }
+  </style>

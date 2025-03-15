@@ -1,0 +1,225 @@
+  <!-- Leadership section -->
+  <section class="leadership py-20 border-b border-gray-300">
+    <div class="container wrapper">
+      <h2
+        class="mb-12 text-4xl text-center tracking-tight font-extrabold text-gray-900"
+      >
+        Our Leadership Team
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- First Leadership -->
+        <div class="people">
+          <div class="people-img">
+            <Image src={People1} alt="Person-1" />
+          </div>
+          <div class="people-text">
+            <h3>My NameIS</h3>
+            <p>Lorem Ipsu sit</p>
+          </div>
+          <ul class="people-social">
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- First Leadership -->
+        <div class="people">
+          <div class="people-img">
+            <Image src={People1} alt="Person-1" />
+          </div>
+          <div class="people-text">
+            <h3>My NameIS</h3>
+            <p>Lorem Ipsu sit</p>
+          </div>
+          <ul class="people-social">
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- First Leadership -->
+        <div class="people">
+          <div class="people-img">
+            <Image src={People1} alt="Person-1" />
+          </div>
+          <div class="people-text">
+            <h3>My NameIS</h3>
+            <p>Lorem Ipsu sit</p>
+          </div>
+          <ul class="people-social">
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End of Leadership Section -->
+  
+  <!-- Section Fellow -->
+  <section class="section-fellows py-20">
+    <div class="container wrapper">
+      <h2
+        class="mb-12 text-4xl text-center tracking-tight font-extrabold text-gray-900"
+      >
+        Our Fellows
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- First Leadership -->
+        <div class="people">
+          <div class="people-img">
+            <Image src={People1} alt="Person-1" />
+          </div>
+          <div class="people-text">
+            <h3>My NameIS</h3>
+            <p>Lorem Ipsu sit</p>
+          </div>
+          <ul class="people-social">
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- First Leadership -->
+        <div class="people">
+          <div class="people-img">
+            <Image src={People1} alt="Person-1" />
+          </div>
+          <div class="people-text">
+            <h3>My NameIS</h3>
+            <p>Lorem Ipsu sit</p>
+          </div>
+          <ul class="people-social">
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- First Leadership -->
+        <div class="people">
+          <div class="people-img">
+            <Image src={People1} alt="Person-1" />
+          </div>
+          <div class="people-text">
+            <h3>My NameIS</h3>
+            <p>Lorem Ipsu sit</p>
+          </div>
+          <ul class="people-social">
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- First Leadership -->
+        <div class="people">
+          <div class="people-img">
+            <Image src={People1} alt="Person-1" />
+          </div>
+          <div class="people-text">
+            <h3>My NameIS</h3>
+            <p>Lorem Ipsu sit</p>
+          </div>
+          <ul class="people-social">
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- First Leadership -->
+        <div class="people">
+          <div class="people-img">
+            <Image src={People1} alt="Person-1" />
+          </div>
+          <div class="people-text">
+            <h3>My NameIS</h3>
+            <p>Lorem Ipsu sit</p>
+          </div>
+          <ul class="people-social">
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- First Leadership -->
+        <div class="people">
+          <div class="people-img">
+            <Image src={People1} alt="Person-1" />
+          </div>
+          <div class="people-text">
+            <h3>My NameIS</h3>
+            <p>Lorem Ipsu sit</p>
+          </div>
+          <ul class="people-social">
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End of Section Fellow -->

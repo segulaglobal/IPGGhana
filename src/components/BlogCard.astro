@@ -18,7 +18,7 @@ const {post} = Astro.props;
         <a href={'/blog/' + post.slug}>
             <Image
             src={post.data.image}
-            alt="Article Image"
+            alt={post.data.title}
             width={600}
             height={600 / 1.5}
             class="w-full h-48 object-cover hover:opacity-75 transition duration-300 ease-in-out"
