@@ -5,25 +5,20 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import { Image } from 'astro:assets';
 
 export const getStaticPaths = async () => {
-    const allPeoples = await getCollection("people");
-    const paths = allPeoples.map(people => {
-        return {
-            params: {
-                slug: people.slug
-            },
-            props: {
-                people
-            }
-        }
-    })
-    return paths;
-}
+    const allTeams = await getCollection("teams"); // Changed from "people" to "teams"
+    return allTeams.map((team) => ({
+        params: { slug: team.slug },
+        props: { team },
+    }));
+};
 
 type Props = {
-    people: CollectionEntry<"allPeoples">
+    team: CollectionEntry<"teams"> // Changed from "people" to "teams"
 }
-const {people} = Astro.props;
-const {Content} = await people.render();
+
+const { team } = Astro.props;
+const { Content } = await team.render();
+
 
 ---
 
@@ -34,12 +29,12 @@ const {Content} = await people.render();
         <div class="container wrapper">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="img">
-                    <Image src={people.data.image} alt={people.data.name} width={600}
+                    <Image src={team.data.image} alt={team.data.name} width={600}
                     height={800} class="w-full h-80 object-cover" />
                 </div>
                 <div class="text md:col-span-2">
                     <h2 class="mb-8 text-4xl tracking-tight font-extrabold text-gray-900">
-                        {people.data.name}
+                        {team.data.name}
                     </h2>
                     <div class="prose overflow-visible relative mb-8 mx-auto">
                         <Content />
@@ -48,12 +43,12 @@ const {Content} = await people.render();
                     <!-- Connect with him -->
                     <ul class="social-list">
                         <li class="social-item">
-                            <a href={people.data.email} class="social-link">
+                            <a href={team.data.email} class="social-link">
                                 <i class="fa-solid fa-envelope" />
                             </a>
                         </li>
                         <li class="social-item">
-                            <a href={people.data.linkedin} class="social-link">
+                            <a href={team.data.linkedin} class="social-link">
                                 <i class="fa-brands fa-linkedin-in" />
                             </a>
                         </li>
@@ -75,7 +70,7 @@ const {Content} = await people.render();
 
         .social-list {
             display: flex;
-            margin-bottom: 2rem;
+            margin-bottom: 5rem;
 
             .social-item {
 

@@ -6,7 +6,7 @@ import TeamCard from "../../components/TeamCard.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 
-const allPeoples: CollectionEntry<"people">[] = await getCollection("people");
+const allTeams: CollectionEntry<"teams">[] = await getCollection("teams");
 ---
 
 <MainLayout>
@@ -38,8 +38,8 @@ const allPeoples: CollectionEntry<"people">[] = await getCollection("people");
       </h2>
       <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         {
-          allPeoples.map((people) => (
-            <TeamCard people={people} />
+          allTeams.map((team) => (
+            <TeamCard team={team} />
           ))
         }
       </div>
