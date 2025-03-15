@@ -38,12 +38,26 @@ const {Content} = await people.render();
                     height={800} class="w-full h-80 object-cover" />
                 </div>
                 <div class="text md:col-span-2">
-                    <h2 class="mb-16 text-4xl tracking-tight font-extrabold text-gray-900">
+                    <h2 class="mb-8 text-4xl tracking-tight font-extrabold text-gray-900">
                         {people.data.name}
-                      </h2>
-                    <div class="prose overflow-visible relative mb-20 mx-auto">
+                    </h2>
+                    <div class="prose overflow-visible relative mb-8 mx-auto">
                         <Content />
                     </div>
+
+                    <!-- Connect with him -->
+                    <ul class="social-list">
+                        <li class="social-item">
+                            <a href={people.data.email} class="social-link">
+                                <i class="fa-solid fa-envelope" />
+                            </a>
+                        </li>
+                        <li class="social-item">
+                            <a href={people.data.linkedin} class="social-link">
+                                <i class="fa-brands fa-linkedin-in" />
+                            </a>
+                        </li>
+                    </ul>
                     <a href="/people" class="btn btn-secondary">&leftarrow; Back</a>
                 </div>
             </div>
@@ -58,6 +72,36 @@ const {Content} = await people.render();
 
 <style>
     .section-person {
+
+        .social-list {
+            display: flex;
+            margin-bottom: 2rem;
+
+            .social-item {
+
+                &:not(:last-child) {
+                    margin-right: 1rem;
+                }
+            }
+            .social-link {
+                display: flex;
+                width: 4rem;
+                height: 4rem;
+                border-radius: 50%;
+                background-color: var(--clr-white);
+                color: var(--clr-black);
+                border: 1px solid var(--clr-black);
+                align-items: center;
+                justify-content: center;
+                transition: .3s;
+
+                &:hover, &:focus {
+                    scale: .9;
+                    background-color: var(--clr-black);
+                    color: var(--clr-white);
+                }
+            }
+        }
         
         p {
             margin-bottom: 1rem;
