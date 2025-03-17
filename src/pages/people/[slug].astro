@@ -33,9 +33,10 @@ const { Content } = await team.render();
                     height={800} class="w-full h-80 object-cover" />
                 </div>
                 <div class="text md:col-span-2">
-                    <h2 class="mb-8 text-4xl tracking-tight font-extrabold text-gray-900">
+                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">
                         {team.data.name}
                     </h2>
+                    <p class="mb-4 text-gray-500">{team.data.title}  |  {team.data.institution}</p>
                     <div class="prose overflow-visible relative mb-8 mx-auto">
                         <Content />
                     </div>

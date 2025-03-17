@@ -1,6 +1,7 @@
 ---
 name: Trial Another
 title: Managing Director
+institution: UG
 image: /src/content/posts/images/people-1.png
 linkedin: https://carbellsarfo.netlify.app/
 email: https://carbellsarfo.netlify.app/

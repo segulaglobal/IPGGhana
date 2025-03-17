@@ -22,7 +22,10 @@ interface Props {
     </div>
     <div class="people-text">
       <h3>{team.data.name}</h3>
-      <p>{team.data.title}</p>
+      <div class="grid grid-cols-2">
+        <p>{team.data.institution}</p>
+        <p>{team.data.title}</p>
+      </div>
     </div>
     <ul class="people-social">
       <li>
