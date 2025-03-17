@@ -3,12 +3,12 @@ name: Dr. Hayford Mensah Ayerakwa
 profession: Senior Lecturer
 institution: University of Ghana
 expertise: Development Economics (Education and Agriculture)
-image: /src/content/posts/images/people-1.png
+image: /src/content/teams/images/dr-hayford.jpg
 linkedin: https://www.linkedin.com/in/hayford-mensah-ayerakwa-63b67531/?originalSubdomain=gh
 email: hayerakwa@ug.edu.gh
 
 ---
-
+===
 
 iRisk Management Limited, a leading insurance brokerage and risk management consulting firm, is thrilled to announce the remarkable accomplishment of our CEO, Sheila Wristberg, who has been honored with the prestigious title of "Young Insurance Professional of the Year 2022" at the Ghana Insurance Excellence Awards 2022.
 
