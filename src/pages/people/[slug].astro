@@ -1,106 +1,107 @@
 ---
-import { getCollection } from 'astro:content';
-import type { CollectionEntry } from 'astro:content';
-import MainLayout from '../../layouts/MainLayout.astro';
-import { Image } from 'astro:assets';
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import MainLayout from "../../layouts/MainLayout.astro";
+import { Image } from "astro:assets";
 
 export const getStaticPaths = async () => {
-    const allTeams = await getCollection("teams"); // Changed from "people" to "teams"
-    return allTeams.map((team) => ({
-        params: { slug: team.slug },
-        props: { team },
-    }));
+  const allTeams = await getCollection("teams"); // Changed from "people" to "teams"
+  return allTeams.map((team) => ({
+    params: { slug: team.slug },
+    props: { team },
+  }));
 };
 
 type Props = {
-    team: CollectionEntry<"teams"> // Changed from "people" to "teams"
-}
+  team: CollectionEntry<"teams">; // Changed from "people" to "teams"
+};
 
 const { team } = Astro.props;
 const { Content } = await team.render();
-
-
 ---
 
-
 <MainLayout>
-
-    <section class="py-36 section-person">
-        <div class="container wrapper">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="img">
-                    <Image src={team.data.image} alt={team.data.name} width={600}
-                    height={800} class="w-full h-80 object-cover" />
-                </div>
-                <div class="text md:col-span-2">
-                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">
-                        {team.data.name}
-                    </h2>
-                    <p class="mb-4 text-gray-500">{team.data.title}  |  {team.data.institution}</p>
-                    <div class="prose overflow-visible relative mb-8 mx-auto">
-                        <Content />
-                    </div>
-
-                    <!-- Connect with him -->
-                    <ul class="social-list">
-                        <li class="social-item">
-                            <a href={team.data.email} class="social-link">
-                                <i class="fa-solid fa-envelope" />
-                            </a>
-                        </li>
-                        <li class="social-item">
-                            <a href={team.data.linkedin} class="social-link">
-                                <i class="fa-brands fa-linkedin-in" />
-                            </a>
-                        </li>
-                    </ul>
-                    <a href="/people" class="btn btn-secondary">&leftarrow; Back</a>
-                </div>
-            </div>
+  <section class="py-36 section-person">
+    <div class="container wrapper">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="img">
+          <Image
+            src={team.data.image}
+            alt={team.data.name}
+            width={600}
+            height={800}
+            class="w-full h-80 object-cover"
+          />
         </div>
-    </section>
+        <div class="text md:col-span-2">
+          <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">
+            {team.data.name}
+          </h2>
+          <p class="mb-4 text-green-500">
+            {team.data.profession} | {team.data.institution}
+          </p>
+          <hr>
+          <p class="pt-4 text-gray-400">{team.data.expertise}</p>
 
+          <!-- Their Bio Goes here -->
+          <div class="prose overflow-visible relative mb-8 mx-auto">
+            <Content />
+          </div>
 
+          <!-- Connect with him -->
+          <ul class="social-list">
+            <li class="social-item">
+              <a href={'mailto:' + team.data.email} class="social-link">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+            <li class="social-item">
+              <a href={team.data.linkedin} target="_blank" class="social-link">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+            </li>
+          </ul>
+          <a href="/people" class="btn btn-secondary">&leftarrow; Back</a>
+        </div>
+      </div>
+    </div>
+  </section>
 </MainLayout>
 
-
-
-
 <style>
-    .section-person {
+  .section-person {
+    .social-list {
+      display: flex;
+      margin-bottom: 5rem;
 
-        .social-list {
-            display: flex;
-            margin-bottom: 5rem;
-
-            .social-item {
-
-                &:not(:last-child) {
-                    margin-right: 1rem;
-                }
-            }
-            .social-link {
-                display: flex;
-                width: 4rem;
-                height: 4rem;
-                border-radius: 50%;
-                background-color: var(--clr-white);
-                color: var(--clr-black);
-                border: 1px solid var(--clr-black);
-                align-items: center;
-                justify-content: center;
-                transition: .3s;
-
-                &:hover, &:focus {
-                    scale: .9;
-                    background-color: var(--clr-black);
-                    color: var(--clr-white);
-                }
-            }
+      .social-item {
+        &:not(:last-child) {
+          margin-right: 1rem;
         }
-        
-        p {
-            margin-bottom: 1rem;
+      }
+      .social-link {
+        display: flex;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        background-color: var(--clr-white);
+        color: var(--clr-black);
+        border: 1px solid var(--clr-black);
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s;
+
+        &:hover,
+        &:focus {
+          scale: 0.9;
+          background-color: var(--clr-black);
+          color: var(--clr-white);
         }
+      }
     }
+
+    p {
+      margin-bottom: 1rem;
+    }
+  }
 </style>

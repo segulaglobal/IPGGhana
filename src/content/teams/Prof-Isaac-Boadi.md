@@ -1,10 +1,11 @@
 ---
-name: Carbell 2
-title: Managing Director
+name: Prof. Isaac Boadi
+profession: Financial Expert & Analyst
 institution: UPSA
+expertise: Finance, Economics & Investment
 image: /src/content/posts/images/people-1.png
-linkedin: https://carbellsarfo.netlify.app/
-email: https://carbellsarfo.netlify.app/
+linkedin: https://www.linkedin.com/in/prof-isaac-boadi-614b8329/?originalSubdomain=gh
+email: Isaac.boadi@upsamail.edu.gh 
 
 ---
 

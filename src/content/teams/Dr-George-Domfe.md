@@ -1,10 +1,11 @@
 ---
-name: Trial Another
-title: Managing Director
-institution: UG
+name: Dr. George Domfe
+profession: Economist
+institution: University of Ghana
+expertise: Public Sector & Monetary Economics
 image: /src/content/posts/images/people-1.png
-linkedin: https://carbellsarfo.netlify.app/
-email: https://carbellsarfo.netlify.app/
+linkedin: https://www.linkedin.com/in/george-domfe-37133437/?originalSubdomain=gh
+email: gdomfe@gmail.com
 
 ---
 

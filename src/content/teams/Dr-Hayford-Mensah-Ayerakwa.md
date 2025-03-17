@@ -1,10 +1,11 @@
 ---
-name: Carbell Sarfo
-title: Managing Director
-institution: Wisconsin
+name: Dr. Hayford Mensah Ayerakwa
+profession: Senior Lecturer
+institution: University of Ghana
+expertise: Development Economics (Education and Agriculture)
 image: /src/content/posts/images/people-1.png
-linkedin: https://carbellsarfo.netlify.app/
-email: https://carbellsarfo.netlify.app/
+linkedin: https://www.linkedin.com/in/hayford-mensah-ayerakwa-63b67531/?originalSubdomain=gh
+email: hayerakwa@ug.edu.gh
 
 ---
 

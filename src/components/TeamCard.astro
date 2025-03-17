@@ -22,14 +22,14 @@ interface Props {
     </div>
     <div class="people-text">
       <h3>{team.data.name}</h3>
-      <div class="grid grid-cols-2">
-        <p>{team.data.institution}</p>
-        <p>{team.data.title}</p>
+      <div class="flex justify-between px-8">
+        <p class="">{team.data.institution}</p>
+        <p class="">{team.data.profession}</p>
       </div>
     </div>
     <ul class="people-social">
       <li>
-        <a href={team.data.email} class="people-link">
+        <a href=mailto:{team.data.email} class="people-link">
           <i class="fa-solid fa-envelope"></i>
         </a>
       </li>
