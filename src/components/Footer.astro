@@ -1,22 +1,81 @@
 ---
 
+import { Image } from "astro:assets";
+import WhiteLogo from "./../assets/logo-white.svg";
 ---
 
+<section class="section-footer">
+  <div class="container wrapper">
+    <div class="grid lg:grid-cols-2 md:grid-cols-2 gap-32">
+      <div>
+        <a href="/" class="logo">
+          <Image src={WhiteLogo} class="footer-logo mb-4" alt="second image" />
+          <!-- <Image src={WhiteLogo} class="footer-logo mb-4" alt="Aceltrim Logo" /> -->
+        </a>
 
+        <p class="">
+          Our mission is to address the critical challenges facing Ghana by providing stakeholders with actionable insights and well-researched policy proposals. 
+        </p>
 
+        <ul class="social-list">
+            <li class="social-item">
+              <a href="#" class="social-link">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+            </li>
+            <li class="social-item">
+              <a
+                href="#"
+                class="social-link"
+              >
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+            </li>
+            <!-- <li class="social-item">
+                      <a href="#" class="social-link">
+                          <i class="fa-brands fa-instagram"></i>
+                      </a>
+                  </li> -->
+          </ul>
+        
+      </div>
 
-
-
-<footer>
-    <div class="container wrapper">
-        <p>Copyright &copy; {new Date().getFullYear()} IPGGhana | Built with <i class="fa-solid fa-heart text-red-600"></i> by <a href="https://www.segulaglobal.com" target="_blank" class="text-green-600 font-bold italic">Digital Segula Global Ltd</a> </p>
+      <!-- Second Column -->
+      <div class="md:self-center md:justify-self-end items-center w-full" >
+        <a href="/contact" class="btn btn-primary">Contact Us</a>
+        <ul class="terms-list">
+            <li class="terms-item">
+              <a href="/terms-of-service" class="terms-link">Terms of service</a>
+            </li>
+            <li class="terms-item">
+              <a href="/privacy-policy" class="terms-link">Privacy policy</a>
+            </li>
+          </ul>
+      </div>
     </div>
+  </div>
+</section>
+
+
+<!-- copyright information -->
+<footer>
+  <div class="container wrapper">
+    <p>
+      Copyright &copy; {new Date().getFullYear()} IPGGhana | Built with <i
+        class="fa-solid fa-heart text-red-600"></i> by <a
+        href="https://www.segulaglobal.com"
+        target="_blank"
+        class="text-green-600 font-bold italic">Digital Segula Global Ltd</a
+      >
+    </p>
+  </div>
 </footer>
 
 
 
+
 <style lang="scss">
-footer {
+  footer {
     background-color: var(--clr-black);
     color: var(--clr-gray-light);
     text-align: center;
@@ -25,8 +84,101 @@ footer {
     z-index: 2;
 
     p {
-        font-size: .9rem;
+      font-size: 0.9rem;
+    }
+  }
+
+  .logo {
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .section-footer {
+    background-color: var(--clr-red-dark);
+    color: var(--clr-white);
+    padding: 4rem 0;
+  }
+
+
+  // Footer Terms
+.terms-list {
+    display: flex;
+    margin: 3rem 0 0;
+    justify-content: left;
+
+    .terms-item {
+
+        &:not(:last-child) {
+            margin-right: 2rem;
+        }
+    }
+
+    .terms-link {
+        display: inline-block;
+        font-size: 1rem;
+        transition: .4s;
+
+        &:hover, &:focus {
+            color: var(--clr-lemon);
+            transform: scale(1.1);
+        }
     }
 }
+// End of footer terms
 
+
+
+
+// Social media icons
+.social-list {
+    display: flex;
+    width: 100%;
+    margin: 2rem 0 0;
+
+    .social-item {
+
+        &:not(:last-child) {
+            margin-right: 2rem;
+        }
+    }
+
+    .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 4rem;
+        height: 4rem;
+        border: 2px solid #989898;
+        border-radius: 50%;
+        position: relative;
+        z-index: 1;
+        transition: .4s;
+        overflow: hidden;
+
+        i {
+            transition: .4s;
+        }
+
+        &:hover i, &:focus i {
+            transform: rotateY(360deg);
+        }
+
+        &:hover::after {
+            top: 0;
+        }
+
+        &::after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(to right, var(--clr-yellow), var(--clr-red));
+            position: absolute;
+            top: 100%;
+            left: 0;
+            transition: .4s;
+            z-index: -1;
+        }
+    }
+    // End of social media icons
+}
 </style>

@@ -1,0 +1,159 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import { Image } from "astro:assets";
+import aboutImage from "../assets/about-img.jpg";
+import BlogSection from "../components/BlogSection.astro";
+
+---
+
+<MainLayout>
+
+    <!-- This is hero section of the about page -->
+  <section class="section-hero pt-20 md:pt-8">
+    <div class="container wrapper">
+      <div
+        class="h-full flex flex-col text-center items-center justify-center"
+      >
+        <h1
+          class="my-5 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl"
+        >
+          About us
+        </h1>
+        <p
+          class="mb-8 text-lg font-normal text-gray-200 lg:text-xl sm:px-16 xl:px-48"
+        >
+		Advancing Governance and Driving Progress
+        </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End of hero section of the about page -->
+
+
+
+      <!-- Our Story section -->
+  <section class="section-about border-b border-gray-200">
+	<div class="container wrapper">
+		<div class="gap-20 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 my-5 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+			<div class="mt-4 md:mt-0">
+				<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">Our Story</h2>
+				<p class="mb-6 font-light text-gray-500 md:text-lg ">At the Institute of Progressive Governance (IPG), we believe that data-driven insights and informed policy decisions are the foundation of national progress, and our commitment to transparency, accountability, and research-driven advocacy sets us apart as a thought leader in governance and economic reforms. <p class="mb-6 font-light text-gray-500 md:text-lg ">By facilitating partnerships between institutions, policymakers, and thought leaders, we create a collaborative space for progressive governance. Whether through training and capacity-building programs, policy discussions, or impactful advocacy campaigns, IPG remains dedicated to influencing governance for sustainable national development.</p>
+				<!-- <a href="#" class="inline-flex items-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">
+					Get started
+					<svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+				</a> -->
+			</div>
+			<Image class="w-full" src={aboutImage} alt="dashboard image">
+			
+		</div>
+	</div>
+</section>
+   <!-- End of Our Story section -->
+
+
+<!--Start of Our mission and vision section -->
+<section class="section-missionVision bg-white border-b border-gray-200" id="mission">
+	<div class="container wrapper">
+		<div class=" px-4 mx-auto max-w-screen-xl lg:px-6">
+			<h2 class="mb-12 text-4xl text-center tracking-tight font-extrabold text-gray-900">Our Mission and Vision</h2>
+			<div class="space-y-8 grid md:grid md:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-12 md:space-y-0">
+				<div class="mission">
+					<div class="mission-icon flex justify-center items-center mb-4 h-10 rounded-full bg-primary-100 lg:h-12 dark:bg-primary-900">
+						<i class="fa-solid fa-gear animate__animated animate-spin"></i>
+					</div>
+					<h3 class="mb-2 text-2xl font-bold my-5">Mission</h3>
+					<p class="text-lg mt-5">To advance Ghana’s development through data-driven insights, policy analysis and advocacy that address critical issues facing the country, while fostering dialogue and partnerships across sectors.</p>
+				</div>
+				<div class="vision">
+					<div class="vision-icon flex justify-center items-center mb-4 h-10 rounded-full bg-primary-100 lg:h-12  dark:bg-primary-900">
+						<i class="fa-solid fa-eye animate__animated animate-pulse"></i>
+					</div>
+					<h3 class="mb-2 text-2xl font-bold my-5">Vision</h3>
+					<p class="text-lg mt-5">To foster a society where innovative solutions drive meaningful change, ensuring accountability and enhancing equity to promote prosperity for all.</p>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+  </section>
+
+<!--End of Our mission and vision section -->
+
+
+<!--Start of Blog Section -->
+<BlogSection />
+<!--End of Blog Section -->
+
+
+   <style>
+      /* Section hero */
+  .section-hero {
+    width: 100%;
+    height: 50vh;
+    background-color: var(--clr-green);
+    background-size: cover;
+    background-position: top;
+  }
+  /* End of section hero */
+
+  /* Start of Mission and Vision Section */
+
+  .section-missionVision {
+	padding-block: 5rem;
+
+	.mission {
+        background-color: var(--clr-green-light);
+		border: 4px solid var(--clr-green);
+		padding: 2rem;
+		border-radius: 1rem;
+		transition: .3s;
+		box-shadow: 0 .3px 5px rgba(0, 0, 0, 0.125);
+
+		&:hover {
+			transform: scale(.95);
+		}
+
+		&:hover .mission-icon {
+			transform: scale(1.2);
+			color: var(--clr-green-light);
+			background-color: var(--clr-green);
+		}
+
+		.mission-icon {
+			width: 3rem;
+			height: 3rem;
+			border: 2px solid var(--clr-green);
+			color: var(--clr-green);
+			transition: .3s;
+		}
+	}
+	.vision {
+        background-color: var(--clr-yellow-light);
+		border: 4px solid var(--clr-yellow);
+		padding: 2rem;
+		border-radius: 1rem;
+		transition: .3s;
+		box-shadow: 0 .3px 5px rgba(0, 0, 0, 0.125);
+
+		&:hover {
+			transform: scale(.95);
+		}
+
+		&:hover .vision-icon {
+			transform: scale(1.2);
+			color: var(--clr-yellow-light);
+			background-color: var(--clr-yellow);
+		}
+
+		.vision-icon {
+			width: 3rem;
+			height: 3rem;
+			border: 2px solid var(--clr-yellow);
+			color: var(--clr-yellow);
+			transition: .3s;
+		}
+	}
+}
+   </style>
+</MainLayout>

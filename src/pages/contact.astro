@@ -1,0 +1,114 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+
+
+---
+
+<MainLayout>
+
+    <!-- This is hero section of the contact page -->
+        <section class="section-hero pt-20 md:pt-8">
+            <div class="container wrapper">
+                <div class="h-full flex flex-col text-center items-center justify-center">
+                    <h1 class="my-5 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
+                        Connect With Us
+                    </h1>
+                    <p class="mb-8 text-lg font-normal text-gray-200 lg:text-xl sm:px-16 xl:px-48">
+                        Reach out to us, and let’s work together with the details below
+                    </p>
+                </div>
+        </section>
+    <!-- End of hero section of the contact page -->
+
+    <!-- Start of Contact details section -->
+        <section class="section-contactDetails bg-white">
+        <div class="container wrapper">
+            <div class=" px-4 mx-auto max-w-screen-xl lg:px-6">
+                <div class="space-y-8 grid md:grid md:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-12 md:space-y-0">
+
+                    <!--First Card -->
+                    <div class="contact bg-amber-200">
+                        
+                        <h3 class="mb-2 text-2xl font-bold my-5">Our Office</h3>
+                        <div class="text-lg my-3">
+                            <p>Institute of Progressive Governance</p>
+                            <p>10 Odum St., East Legon</p>
+                            <p>Accra</p>
+                            <p>Ghana</p>
+                        </div>
+                        <a href="mailto:info@ipg.com.gh">info@ipg.com.gh</a>
+                    </div>				
+
+                    <!--Second Card -->
+                    <div class="contact bg-amber-500">
+                        
+                        <div class="enquiries my-3">
+                            <h3 class="text-2xl font-bold">For Enquiries</h3>
+                            <p>Please email: 
+                                <a href="mailto:info@ipg.com.gh">info@ipg.com.gh</a>
+                            </p>
+                        </div>
+                        <div class="enquiries my-3">
+                            <h3 class="text-2xl font-bold">Or Call</h3>
+                            <p>Tel: 
+                                <a href="+233 24 092 0170">+233 24 092 0170</a>
+                            </p>
+                        </div>
+                    </div>				
+                </div>
+            </div>
+        </div>
+    </section>
+     <!-- End of Contact details section -->
+
+
+
+
+
+    <style>
+        /* Section hero */
+    .section-hero {
+        width: 100%;
+        height: 50vh;
+        /* margin-top: 100px; */
+        background-color: var(--clr-red);
+        background-size: cover;
+        background-position: top;
+    }
+    /* End of section hero */
+
+    .section-contactDetails {
+        padding-block: 5rem;
+
+        .contact {
+            /* background-color: var(--clr-yellow-light); */
+            padding: 2rem;
+            border-radius: 1rem;
+            transition: .3s;
+            box-shadow: 0 .3px 5px rgba(0, 0, 0, 0.125);
+
+            &:hover {
+                transform: scale(.95);
+            }
+
+            &:hover .contact-icon {
+                transform: scale(1.2);
+                color: var(--clr-yellow-light);
+                background-color: var(--clr-yellow);
+            }
+
+            .contact-icon {
+                width: 3rem;
+                height: 3rem;
+                border: 2px solid var(--clr-yellow);
+                color: var(--clr-green);
+                transition: .3s;
+            }
+
+            a {
+                color: var(--clr-red);
+            }
+        }
+
+    </style>
+</MainLayout>
