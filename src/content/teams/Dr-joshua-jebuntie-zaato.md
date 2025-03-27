@@ -2,7 +2,7 @@
 name: Dr Joshua Jebuntie Zaato
 profession: Senior Lecturer
 institution: University of Ghana
-expertise: PPublic Policy, Governance, Political Analysis, Elections, Polling
+expertise: Public Policy, Governance, Political Analysis, Elections, Polling
 image: /src/content/teams/images/Dr-joshua-jebuntie.jpg
 linkedin: https://pscience.ug.edu.gh/staff/dr-joshua-jebuntie-zaato
 email: jjzaato@ug.edu.gh
