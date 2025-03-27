@@ -6,7 +6,7 @@ expertise: Development Economics (Education and Agriculture)
 image: /src/content/teams/images/dr-hayford.jpg
 linkedin: https://www.linkedin.com/in/hayford-mensah-ayerakwa-63b67531/?originalSubdomain=gh
 email: hayerakwa@ug.edu.gh
-pubDate: 2024-04-05T17:06:00.000Z
+pubDate: 2024-04-04T17:06:00.000Z
 ---
 
 Dr. Hayford Mensah Ayerakwa is a seasoned academic and development economist with nearly two decades of research experience in the field. Currently serving as a senior lecturer at the University of Ghana, he has established himself as a leading voice in the discourse on economic development, contributing significantly to scholarly literature through extensive publications in reputable journals in such as Food Policy, Natural Resources, Carbon Research, Agriculture and Food Economics, Geographical Research, etc.

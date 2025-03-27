@@ -6,7 +6,7 @@ expertise: Economics, Finance, Accounting, & Sustainability
 image: /src/content/teams/images/Eric-Boachie-Yiadom.png
 linkedin: https://www.linkedin.com/in/eric-boachie-yiadom-phd-b724a5175/?originalSubdomain=gh
 email:  yiadom.gh@gmail.com
-pubDate: 2024-04-04T17:06:00.000Z
+pubDate: 2024-04-03T17:06:00.000Z
 ---
 
 
