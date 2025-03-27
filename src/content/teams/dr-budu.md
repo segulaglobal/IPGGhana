@@ -6,6 +6,6 @@ expertise: Constitutional Law, Criminal Law, Human Rights Law and International 
 image: /src/content/teams/images/Dr-kwaku.png
 linkedin: https://www.linkedin.com/in/dr-kwaku-agyeman-budu-a0a9485a/?originalSubdomain=gh
 email: kwakuagyemanbudu@gmail.com
-
+pubDate: 2024-04-03T17:06:00.000Z
 ---
 

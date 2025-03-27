@@ -24,6 +24,7 @@ const teamsCollection = defineCollection({
         image: image(),
         email: z.string(),
         linkedin: z.string(),
+        pubDate: z.date(),
     }),
 });
 

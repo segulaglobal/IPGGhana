@@ -6,6 +6,7 @@ expertise: Monetary economics, Macroeconomics, Public Economics, Climate Economi
 image: /src/content/teams/images/Dr-frank-bannor.png
 linkedin: https://www.linkedin.com/in/frank-bannor-2720a919/?original_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F&originalSubdomain=za
 email: bannorfrank@gmail.com
+pubDate: 2024-04-02T17:06:00.000Z
 ---
 
 Dr Frank Bannor is a Lecturer at the Department of Economics & Applied Mathematics, GIMPA. He is currently a Research Fellow at the Institute for Progressive Governance (IPG), and a Postdoctoral Research Fellow at the University of Johannesburg, South Africa.

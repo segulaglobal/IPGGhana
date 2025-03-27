@@ -6,6 +6,7 @@ expertise: Public Policy, Governance, Political Analysis, Elections, Polling
 image: /src/content/teams/images/Dr-joshua-jebuntie.jpg
 linkedin: https://pscience.ug.edu.gh/staff/dr-joshua-jebuntie-zaato
 email: jjzaato@ug.edu.gh
+pubDate: 2024-04-01T17:06:00.000Z
 ---
 
 Dr Joshua Jebuntie Zaato is a scholar, researcher, media commentator, and an avid political animal. He is currently a Senior Lecturer at the Department of Political Science, University of Ghana, Legon. He graduated from the University of Ghana, Legon with a First Class (Hons) degree in Political Science in 2003. He then proceeded to do both his MA and PhD in Public Administration (both on academic scholarship) from Brock University and the University of Ottawa, both in Ontario Canada, respectively.
