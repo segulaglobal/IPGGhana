@@ -2,15 +2,13 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "src/content" # Base path for uploads
-public_folder: "/src/content"
+media_folder: "src/content/uploads"        # Where uploaded images will be stored in your repo
+public_folder: "/src/content/uploads"      # How those images will be accessed on the front-end
 
 collections:
   - name: "blog"
     label: "Blog"
     folder: "src/content/posts"
-    media_folder: "src/content/posts/images"
-    public_folder: "/src/content/posts/images"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
@@ -25,8 +23,6 @@ collections:
   - name: "teams"
     label: "People"
     folder: "src/content/teams"
-    media_folder: "src/content/teams/images"
-    public_folder: "/src/content/teams/images"
     create: true
     slug: "{{slug}}"
     fields:
@@ -41,8 +37,6 @@ collections:
   - name: "articles"
     label: "Publications"
     folder: "src/content/articles"
-    media_folder: "src/content/articles/images"
-    public_folder: "/src/content/articles/images"
     create: true
     slug: "{{year}}-{{month}}-{{slug}}"
     fields:
