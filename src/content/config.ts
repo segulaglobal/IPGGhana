@@ -28,7 +28,23 @@ const teamsCollection = defineCollection({
     }),
 });
 
+
+// Publication Collections
+const articleCollection = defineCollection({
+    type: 'content',
+    schema: ({image}) => z.object({
+        title: z.string(),
+        description: z.string(),
+        author: z.string(),
+        pubDate: z.date(),
+        tags: z.array(z.string()),
+        image: image(),
+        imageAlt: z.string()
+    }),
+});
+
 export const collections = {
     posts: postsCollection,
     teams: teamsCollection,
+    articles: articleCollection
 }

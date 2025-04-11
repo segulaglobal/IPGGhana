@@ -36,3 +36,7 @@ body {
   font-family: "Hind Mudarai", sans-serif;
   line-height: 1.5;
 }
+
+p {
+  line-height: 2;
+}
