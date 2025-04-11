@@ -2,7 +2,7 @@
 title: lorem Ipsum sit amet thing here
 pubDate: 2023-09-04T11:03:00.000Z
 author: Lorem Author
-image: /src/content/posts/images/ciig-landscape.jpeg
+image: /src/content/uploads/koftown.png
 tags:
   - Lorem ipssum
 rating: 5
