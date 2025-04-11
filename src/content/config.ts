@@ -28,22 +28,22 @@ const teamsCollection = defineCollection({
 });
 
 
-// People Collections
+// Publication Collections
 const articleCollection = defineCollection({
     type: 'content',
     schema: ({image}) => z.object({
-        name: z.string(),
-        profession: z.string(),
-        institution: z.string(),
-        expertise: z.string(),
+        title: z.string(),
+        description: z.string(),
+        author: z.string(),
+        pubDate: z.date(),
+        tags: z.array(z.string()),
         image: image(),
-        email: z.string(),
-        linkedin: z.string(),
+        imageAlt: z.string()
     }),
 });
 
 export const collections = {
     posts: postsCollection,
     teams: teamsCollection,
-    article: articleCollection
+    articles: articleCollection
 }
