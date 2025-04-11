@@ -2,7 +2,7 @@
 title: Trial from website
 pubDate: 2025-04-11T17:53:00.000Z
 author: carbell sarfo
-image: /src/content/posts/images/learn.png
+image: /src/content/posts/images/learrn.png
 tags:
   - post
 rating: 2
