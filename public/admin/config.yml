@@ -1,16 +1,19 @@
 backend:
   name: git-gateway
   branch: main
-media_folder: "src/content/posts/images" # Location where files will be stored in the repo
-public_folder: "/src/content/posts/images" # The src attribute for uploaded media
+
+media_folder: "src/content" # Base path for uploads
+public_folder: "/src/content"
+
 collections:
-  - name: "blog" # Used in routes, e.g., /admin/collections/blog
-    label: "Blog" # Used in the UI
-    folder: "src/content/posts" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    fields: # The fields for each document, usually in frontmatter
-      # - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
+  - name: "blog"
+    label: "Blog"
+    folder: "src/content/posts"
+    media_folder: "src/content/posts/images"
+    public_folder: "/src/content/posts/images"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "pubDate", widget: "datetime" }
       - { label: "Author", name: "author", widget: "string" }
@@ -18,3 +21,35 @@ collections:
       - { label: "Tags", name: "tags", widget: "list", default: ["post"] }
       - { label: "Rating (scale of 1-5)", name: "rating", widget: "number" }
       - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "teams"
+    label: "People"
+    folder: "src/content/teams"
+    media_folder: "src/content/teams/images"
+    public_folder: "/src/content/teams/images"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Profession", name: "profession", widget: "string" }
+      - { label: "Institution", name: "institution", widget: "string" }
+      - { label: "Expertise", name: "expertise", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Email", name: "email", widget: "string" }
+      - { label: "LinkedIn", name: "linkedin", widget: "string" }
+
+  - name: "articles"
+    label: "Publications"
+    folder: "src/content/articles"
+    media_folder: "src/content/articles/images"
+    public_folder: "/src/content/articles/images"
+    create: true
+    slug: "{{year}}-{{month}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Publish Date", name: "pubDate", widget: "datetime" }
+      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Cover Image", name: "image", widget: "image" }
+      - { label: "Image Alt", name: "imageAlt", widget: "string" }
