@@ -33,6 +33,7 @@ collections:
       - { label: "Image", name: "image", widget: "image" }
       - { label: "Email", name: "email", widget: "string" }
       - { label: "LinkedIn", name: "linkedin", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
 
   - name: "articles"
     label: "Publications"
@@ -47,3 +48,4 @@ collections:
       - { label: "Tags", name: "tags", widget: "list" }
       - { label: "Cover Image", name: "image", widget: "image" }
       - { label: "Image Alt", name: "imageAlt", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }

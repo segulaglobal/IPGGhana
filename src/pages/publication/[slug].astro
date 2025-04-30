@@ -35,7 +35,7 @@ const { Content } = await article.render();
       <!--Author  -->
       <div class="author">
         <div class="author__image">
-          <Image src={article.data.image} alt={article.data.author} />
+          <!-- <Image src={article.data.image} alt={article.data.author} /> -->
           <div>
             <p class="italic">
               written by <span class="author-name not-italic">{article.data.author}</span>
@@ -62,11 +62,21 @@ const { Content } = await article.render();
 
       <Content />
 
-      <a href="/publication" class="mt-28 btn btn-secondary">&LeftArrow; Go Back</a>
+      <a href="/publication" class="mt-28 btn btn-secondary py-8">&LeftArrow; Go Back</a>
 
     </div>
   </section>
 </BlogLayout>
+
+
+
+
+
+
+
+
+
+
   <style lang="scss">
     /* // ============= INDIVIDUAL BLOG PAGE ==================== */
     .individual-article__page {
@@ -106,7 +116,7 @@ const { Content } = await article.render();
         border-radius: 2rem;
       }
 
-      // Author and date
+      //============== Author and date ================
       .author {
         text-transform: capitalize;
         color: darkgray;
@@ -142,10 +152,14 @@ const { Content } = await article.render();
         }
         p {
           // display: inline-block;
-          margin-bottom: 0;
+          margin-bottom: 0rem;
           margin-top: 0;
         }
       }
+      // ============== End of Author Details ============
+
+
+
       .blog-share__list {
         list-style: none;
       }
@@ -166,9 +180,10 @@ const { Content } = await article.render();
         letter-spacing: 0px;
       }
 
-      // paragraphs
-      p {
+      // ==================== paragraphs ==================
+      p:not([class=""]) {
         margin-bottom: 3rem;
+        display: none;
       }
 
       // Blockquotes
@@ -222,7 +237,22 @@ const { Content } = await article.render();
       }
     }
 
-    // media queries
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // ================= media queries ==================
     @media screen and (max-width: 600px) {
       .individual-article__page {
         .main-article__figure {
@@ -239,6 +269,10 @@ const { Content } = await article.render();
         .blog-heading {
           font-size: 3rem;
         }
+      }
+
+      p {
+        margin-bottom: 2rem;
       }
     }
   </style>
