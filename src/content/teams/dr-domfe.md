@@ -1,12 +1,12 @@
 ---
+pubDate: 2024-04-07T17:06:00.000Z
 name: Dr. George Domfe
 profession: Economist
 institution: University of Ghana
-expertise: Public Sector & Monetary Economics
+expertise: Development & Public Sector Economics
 image: /src/content/teams/images/Dr-george.jpg
-linkedin: https://www.linkedin.com/in/george-domfe-37133437/?originalSubdomain=gh
 email: gdomfe@gmail.com
-pubDate: 2024-04-07T17:06:00.000Z
+linkedin: https://www.linkedin.com/in/george-domfe-37133437/?originalSubdomain=gh
 ---
 
 Dr. George Domfe is a Development Economist and a Senior Research Fellow at the Centre for Social Policy Studies (CSPS) at the College of Humanities, University of Ghana. He holds PhD in Development Studies and MPhil and BA (Hons) in Economics from the University of Ghana. His research focus is on special issues in vulnerability [child marriage & the economics of old age] and public sector economics. 
