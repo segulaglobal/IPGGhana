@@ -1,11 +1,11 @@
 ---
 title: "Developing the Next Generation of Female Talent "
-description: "Dummy text here"
+description: Dummy text here
 author: Lorem Ipsum
 pubDate: 2023-09-04T11:03:00.000Z
 tags:
   - featured
-image: /src/content/posts/images/ciig-landscape.jpeg
+image: /src/content/uploads/image001.jpg
 imageAlt: "Sheila Wristberg Challenges to Breaking the Proverbial Glass Ceiling
   to getting to the Top "
 ---
