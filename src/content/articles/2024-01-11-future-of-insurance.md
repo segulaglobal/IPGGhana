@@ -7,7 +7,7 @@ image: /src/content/posts/images/ciig-landscape.jpeg
 tags:
   - Lorem ipssum
 rating: 5
-imageAlt: Future of Insurance Sheila Wristberg
+imageAlt: Future of
 ---
 # Perspectives from the 4th Sharm Rendezvous
 

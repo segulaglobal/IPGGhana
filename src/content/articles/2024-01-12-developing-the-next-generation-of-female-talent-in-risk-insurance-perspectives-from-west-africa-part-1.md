@@ -6,7 +6,7 @@ pubDate: 2023-09-04T11:03:00.000Z
 tags:
   - featured
 image: /src/content/uploads/image001.jpg
-imageAlt: "Sheila Wristberg Challenges to Breaking the Proverbial Glass Ceiling
+imageAlt: " to Breaking the Proverbial Glass Ceiling
   to getting to the Top "
 ---
 <!--StartFragment-->
