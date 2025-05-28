@@ -22,9 +22,9 @@ const { article } = Astro.props;
 const { Content } = await article.render();
 ---
 
-<BlogLayout title={'Africa Policy Lens | ' + article.data.title}>
+<BlogLayout title={'Africa Policy Lens | ' + article.data.title} description={article.data.description}>
   <!-- section for publication -->
-  <section class="individual-article__page">
+  <section class="individual-article">
     <div class="flow">
       <!-- Title -->
       <h1 class="blog-heading mb-20">{article.data.title}</h1>
@@ -44,13 +44,13 @@ const { Content } = await article.render();
           </div>
 
           <!-- Share to social media -->
-          <ul class="blog-share__list">
-            <li>
+          <!-- <ul class="blog-share__list">
+            <li> -->
               <!-- {# <a href="#">
             <i class="fa-brands fa-linkedin-in"></i>
           </a> #} -->
-            </li>
-          </ul>
+            <!-- </li>
+          </ul> -->
         </div>
         <!-- End of Author tag -->
       </div>
@@ -78,12 +78,14 @@ const { Content } = await article.render();
 
 
   <style lang="scss">
+
+
     /* // ============= INDIVIDUAL BLOG PAGE ==================== */
-    .individual-article__page {
+    .individual-article {
       padding: 5rem 0 10rem;
 
       .flow {
-        max-width: 800px;
+        max-width: 900px;
         padding-inline: 2rem;
         margin-inline: auto;
       }
@@ -98,7 +100,7 @@ const { Content } = await article.render();
       /* // Description */
       .blog-subheading {
         color: var(--clr-gray-light);
-        margin: 1.5rem 0;
+        margin: 1rem 0;
         font-size: 2rem;
         font-weight: normal;
         line-height: 1.5;
@@ -111,7 +113,7 @@ const { Content } = await article.render();
         padding: 0;
         height: auto;
         width: 100%;
-        height: auto;
+        max-width: 500px;
         object-fit: cover;
         border-radius: 2rem;
       }
@@ -124,9 +126,9 @@ const { Content } = await article.render();
         align-items: center;
         justify-content: space-between;
         padding: 0.5rem;
-        margin: 2rem 0;
-        margin-top: 4rem;
-        margin-bottom: 5rem;
+        margin: 1.5rem 0;
+        margin-top: 2rem;
+        margin-bottom: 3rem;
         font-size: 1rem;
         border-block: 2px solid var(--clr-gray-light);
         padding-block: 2rem;
@@ -174,6 +176,7 @@ const { Content } = await article.render();
         margin-top: 3rem;
         // font-family: 'Yellowtail', cursive;
         letter-spacing: 2px;
+        font-weight: bold;
       }
       .heading-secondary {
         // font-family: 'Oswald', sans-serif;
@@ -182,7 +185,7 @@ const { Content } = await article.render();
 
       // ==================== paragraphs ==================
       p:not([class=""]) {
-        margin-bottom: 3rem;
+        margin-bottom: 3rem !important;
         display: none;
       }
 
@@ -237,24 +240,21 @@ const { Content } = await article.render();
       }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
+    .flow p {
+  margin-bottom: 3rem;
+  line-height: 1.75;
+  color: #444;
+}
+    h2 {
+      display: none;
+      color: green;
+    }
 
 
 
     // ================= media queries ==================
     @media screen and (max-width: 600px) {
-      .individual-article__page {
+      .individual-article {
         .main-article__figure {
           &::before,
           &::after {
@@ -264,7 +264,7 @@ const { Content } = await article.render();
       }
     }
     @media screen and (max-width: 1019px) {
-      .individual-article__page {
+      .individual-article {
         // Title
         .blog-heading {
           font-size: 3rem;
