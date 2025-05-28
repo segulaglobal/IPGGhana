@@ -33,7 +33,7 @@ managed.
 
 
 ## 
-Debt Accumulation in Early 2025 – Overview
+**Debt Accumulation in Early 2025 – Overview**
 
 Ghana’s total public debt stock climbed to GH¢769.4 billion by end-March 2025 (about 55% of
 GDP), up from **GH¢726.7 billion** at the end of 2024. This **GH¢42.7 billion increase in Q1 2025**
@@ -52,7 +52,7 @@ require sustained fiscal discipline to contain.
 
 ## 
 
-Domestic Borrowing Trends – Heavy Reliance on T-Bills
+**Domestic Borrowing Trends – Heavy Reliance on T-Bills**
 
 Domestic borrowing has largely driven Ghana’s new debt accumulation in early 2025. With Ghana still shut out of international capital markets post-default, the government has leaned **heavily on
 the domestic market** to finance its deficit. In practice, this has meant an over-reliance on **short-term Treasury bills** and a few privately placed bonds, as the normal medium- to long-term bond
@@ -92,7 +92,7 @@ sector’s share fell to 43.8%. This suggests the government is increasingly tap
 are particularly worrying in this regard – such deals lack transparency and can carry steep costs. Analysts have warned that Ghana’s reliance on **short-term bills and off-market placements is not sustainable and could undermine debt sustainability** if it persists. We echo these concerns and urge a return to normal, transparent auctioning of medium- and long-term bonds as soon as market conditions allow.
 
 
-External Borrowing and Debt Stock Evolution
+**External Borrowing and Debt Stock Evolution**
 
 
 On the external front, Ghana’s **external debt stock** has seen only a modest increase in 2025 so far. In dollar terms, external debt rose slightly from about $49.4 billion at end-2024 to $49.5 billion by March 2025. The **IMF, World Bank, and other official creditors** remain the main sources of
@@ -118,7 +118,7 @@ this would further add to the debt pile. It is therefore imperative that Ghana a
 
 
 ### 
-Rising Interest Costs and Debt Service Burden
+**Rising Interest Costs and Debt Service Burden**
 
 
 One of the most alarming trends associated with Ghana’s recent borrowing is the soaring interest cost on public debt. Years of high interest rates and increased debt stock have translated into a heavy debt service burden for the government. In 2024, interest payments consumed roughly 16.8% of total government expenditure and about half of tax revenues. For 2025, interest costs are projected to climb even higher – the budget allocates GH¢64.2 billion to interest payments, which is nearly 24% of total spending and about 29% of expected revenues. This  means almost one out of every four cedis spent by government next year would go to creditors as interest, a
@@ -133,7 +133,7 @@ substantial and foreign exchange-intensive. Without question, Ghana’s current 
 takes hold, interest costs will remain a perilous strain on the budget.
 
 ## 
-A Balanced View – Legitimate Needs vs. Sustainability Concerns
+**A Balanced View – Legitimate Needs vs. Sustainability Concerns**
 
 
 APL recognizes that Ghana’s government faces a difficult balancing act. On one hand, borrowing in early 2025 has been driven by legitimate fiscal needs: to fund public sector salaries, essential services, and economic recovery initiatives at a time when domestic revenue mobilization is still ramping up. The first quarter of 2025 saw relatively restrained fiscal deficits – the government recorded a 1.0% of GDP fiscal deficit and even a small primary surplus of 0.3% of GDP by March, indicating an effort to contain expenditures. This fiscal prudence, alongside tight monetary policy, has contributed to the cedi’s stabilization and a gradual return of investor confidence. We commend the authorities for these achievements and for avoiding unchecked spending so far.
@@ -146,7 +146,7 @@ indefinitely. The underlying reality is that Ghana’s debt stock is high and gr
 financing, the situation could deteriorate quickly. Moreover, 2024 is an election year in Ghana, and historically election periods have led to fiscal slippages as outgoing administrations ramp up spending. Any significant unplanned spending or populist fiscal measures in late 2024 would worsen the debt outlook and erode the hard-won gains of stabilization. We urge all stakeholders – the government, opposition, and civil society – to maintain a focus on fiscal sustainability throughout the election cycle. Short-term political considerations must not derail the progress on consolidation, as the economic consequences of backsliding would be severe (e.g. another currency depreciation, loss of investor trust, and possibly a return to financing by money-printing).
 
 ## 
-Recommendations – Managing Ghana’s Debt Path Prudently
+**Recommendations – Managing Ghana’s Debt Path Prudently**
 
 
 In light of the above findings, Africa Policy Lens offers the following cautions and
@@ -159,14 +159,10 @@ recommendations to the Government of Ghana regarding prudent debt management:
 * Avoid Excessive Short-Term Rollovers: Until longer tenors are reintroduced, the government must manage its T-bill program very carefully. APL cautions against accumulating ever larger volumes of short-term debt that could become un-refinanceable in a stress scenario. We recommend setting prudent limits on net new T-bill issuance each quarter, aligned with what the market can absorb without rate spikes. If there are weeks of low demand, it is preferable to adjust spending or seek alternate financing (e.g. temporary IMF bridge financing) rather than force a high-cost rollover. The risks of a failed rollover – which could trigger payment defaults or disruptive monetary financing –
   are too grave. Building a small liquidity buffer when possible (e.g. using any revenue windfalls or IMF disbursements to hold some cash) would help insulate against auction shortfalls. Essentially, Ghana should not bet its finances on week-to-week T-bill sales – a more strategic approach to debt and cash management is needed in this interim period.
 * Enhance Transparency and Accountability: We call on the Ministry of Finance to improve public disclosure around debt issuance and debt stocks. This includes timely publication of monthly debt bulletins and details of any private placements or nonstandard borrowing. The lack of transparency around bilateral private loans can breed
-  mistrust and mask the true debt picture. APL applauds the Ministry’s recent Debt Statistics Bulletins and urges that these continue on a quarterly (if not monthly) basis, with clear breakdowns of domestic and external components, maturities, and holder composition. Transparency will bolster confidence among investors 
-   (domestic and foreign alike) that
-  Ghana’s debt management is above-board and under control.
-* Rein in Interest Costs through Reforms: To address the crushing interest burden, the
-  government must tackle the problem from both ends – reduce the cost of debt, and reduce the quantity of debt. On cost, as discussed, moving to longer maturities at reasonable rates will help, and successfully concluding the external debt restructuring will also lower interest (Eurobond coupons, for instance, could be cut substantially in any deal). On the quantity side, fiscal consolidation is key. The only sure way to stop debt from snowballing is to eliminate the underlying deficit over time. We encourage continued efforts to boost domestic revenue (through tax reforms and improved collection) and tightly prioritize expenditures. Every cedi of extra revenue or saved expense that can be channeled to reducing borrowing will pay dividends in lower future interest payments. Ghana should
-  also explore liability management operations – for example, using some IMF inflows or other funds to retire especially costly debt (like certain domestic bonds or overdrafts) if
-  feasible. Creative, proactive debt management can shave off interest costs at the margin. Above all, Ghana must avoid policies that would increase interest costs – for instance, any
-  return to central bank deficit financing would be counterproductive, as it would fuel inflation and force interest rates back up. Discipline and reform are the surest route to bringing interest expenses down over the medium term
+
+mistrust and mask the true debt picture. APL applauds the Ministry’s recent Debt Statistics Bulletins and urges that these continue on a quarterly (if not monthly) basis, with clear breakdowns of domestic and external components, maturities, and holder composition. Transparency will bolster confidence among investors (domestic and foreign alike) that Ghana’s debt management is above-board and under control.
+
+* Rein in Interest Costs through Reforms: To address the crushing interest burden, the government must tackle the problem from both ends – reduce the cost of debt, and reduce the quantity of debt. On cost, as discussed, moving to longer maturities at reasonable rates will help, and successfully concluding the external debt restructuring will also lower interest (Eurobond coupons, for instance, could be cut substantially in any deal). On the quantity side, fiscal consolidation is key. The only sure way to stop debt from snowballing is to eliminate the underlying deficit over time. We encourage continued efforts to boost domestic revenue (through tax reforms and improved collection) and tightly prioritize expenditures. Every cedi of extra revenue or saved expense that can be channeled to reducing borrowing will pay dividends in lower future interest payments. Ghana should also explore liability management operations – for example, using some IMF inflows or other funds to retire especially costly debt (like certain domestic bonds or overdrafts) if feasible. Creative, proactive debt management can shave off interest costs at the margin. Above all, Ghana must avoid policies that would increase interest costs – for instance, any  return to central bank deficit financing would be counterproductive, as it would fuel inflation and force interest rates back up. Discipline and reform are the surest route to bringing interest expenses down over the medium term
 * Safeguard Debt Sustainability Targets: Under the IMF-supported program, Ghana has quantitative targets and thresholds to keep debt on a sustainable path. APL strongly advises
   the government to adhere to these targets and even build additional buffers where possible. This includes sticking to the primary surplus objectives, limits on nonconcessional borrowing, and careful vetting of new loan commitments. Any large new
   borrowing initiatives (especially if off-budget or through state-owned enterprises) should be avoided unless absolutely necessary, as they could jeopardize the delicate debt
@@ -180,7 +176,7 @@ recommendations to the Government of Ghana regarding prudent debt management:
   observers that Ghana is genuinely committed to exiting its debt distress and will not slip back into crisis.
 
 ## 
-Conclusion
+**Conclusion**
 
 In summary, Africa Policy Lens finds that Ghana’s borrowing between January and May 2025, while addressing immediate fiscal needs, is raising red flags that cannot be ignored. Total public debt continues to mount, driven predominantly by domestic short-term loans. Interest payments are eating a sizeable portion of the budget, and rollover requirements are high, indicating
 considerable vulnerability in the government’s financing strategy. At the same time, we note positive signs – the cedi’s strength, declining T-bill yields, and ongoing fiscal restraint – which suggest that prudent policies can indeed improve the debt outlook. The government’s challenge
@@ -192,4 +188,4 @@ could quickly unravel the recent stability. Conversely, a steadfast commitment t
 by ensuring that Ghana’s debt remains sustainable going forward. Every borrowing decision should be vetted against the question: Does this keep us on a sustainable path, or put our future at risk?
 
 
-Africa Policy Lens stands ready to support and advise on this journey toward debt sustainability. We will continue to monitor Ghana’s public debt trajectory and advocate for policies that balance the country’s development financing needs with the imperative of maintaining economic stability. Ghana’s story in early 2025 is one of fragile recovery – wise debt management will determine whether this recovery strengthens into lasting prosperity or falters under renewed financial stress. We are hopeful that, with prudent actions as outlined above, Ghana will choose the path of longterm fiscal health and avoid the perils of excessive debt. APL’s message to the government is clear: borrow wisely, manage debt responsibly, and safeguard Ghana’s economic future.
+Africa Policy Lens stands ready to support and advise on this journey toward debt sustainability. We will continue to monitor Ghana’s public debt trajectory and advocate for policies that balance the country’s development financing needs with the imperative of maintaining economic stability. Ghana’s story in early 2025 is one of fragile recovery – wise debt management will determine whether this recovery strengthens into lasting prosperity or falters under renewed financial stress. We are hopeful that, with prudent actions as outlined above, Ghana will choose the path of long-term fiscal health and avoid the perils of excessive debt. APL’s message to the government is clear: borrow wisely, manage debt responsibly, and safeguard Ghana’s economic future.
