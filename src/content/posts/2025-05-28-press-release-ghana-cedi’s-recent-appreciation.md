@@ -1,5 +1,6 @@
 ---
-title: "Press Release - Ghana Cedi’s Recent Appreciation "
+title: "GOLD, AUSTERITY, AND INTERVENTION: WHAT'S FUELING THE CEDI'S RISE - AND
+  WILL IT LAST?"
 pubDate: 2025-05-28T07:00:00.000Z
 author: APL
 image: /src/content/uploads/imgd9.jpg
@@ -7,6 +8,10 @@ tags:
   - post
 rating: 2
 ---
+# Press Release
+
+# Ghana Cedi’s Recent Appreciation 
+
 In assessing the cedi’s notable turnaround, it is important to situate the appreciation within a broader policy and global context. Africa Policy Lens (APL) acknowledges that the new government’s fiscal consolidation measures have played a pivotal role in stabilizing the macroeconomic environment. The decisive steps taken—expenditure freezes, arrears audits, and strategic forex interventions—have contributed significantly to restoring market confidence.
 
 However, APL also recognizes the residual impact of earlier policy actions, particularly the painful but ultimately successful debt restructuring initiated in 2023–2024. That restructuring reduced near-term debt service obligations and created fiscal space to support stabilization efforts in 2025. Moreover, Ghana’s gold reserve accumulation strategy, launched by the previous administration, laid the groundwork for the central bank’s recent gold-backed forex liquidity operations. In addition to domestic reforms, global macroeconomic shifts—especially the weakening of the US dollar due to trade tensions and the emerging global tariff war—have also contributed to the cedi’s strength, as other currencies gain ground against the dollar. These combined domestic and global forces have converged to support the cedi’s rise, though their sustainability remains a pressing question.
