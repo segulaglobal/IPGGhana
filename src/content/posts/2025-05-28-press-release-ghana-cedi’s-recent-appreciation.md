@@ -5,7 +5,7 @@ author: APL
 image: /src/content/uploads/imgd9.jpg
 tags:
   - post
-rating: 5
+rating: 2
 ---
 In assessing the cedi’s notable turnaround, it is important to situate the appreciation within a broader policy and global context. Africa Policy Lens (APL) acknowledges that the new government’s fiscal consolidation measures have played a pivotal role in stabilizing the macroeconomic environment. The decisive steps taken—expenditure freezes, arrears audits, and strategic forex interventions—have contributed significantly to restoring market confidence.
 
