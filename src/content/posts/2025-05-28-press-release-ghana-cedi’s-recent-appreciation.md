@@ -3,7 +3,7 @@ title: "GOLD, AUSTERITY, AND INTERVENTION: WHAT'S FUELING THE CEDI'S RISE - AND
   WILL IT LAST?"
 pubDate: 2025-05-28T07:00:00.000Z
 author: APL
-image: /src/content/uploads/imgd9.jpg
+image: /src/content/posts/images/imgd9.jpg
 tags:
   - post
 rating: 2

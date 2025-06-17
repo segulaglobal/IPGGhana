@@ -2,7 +2,7 @@
 title: "GH₵1 Fuel Levy Hike: A Step Backward for Fair and Transparent Economic Policy"
 pubDate: 2025-06-10T12:16:00.000Z
 author: Africa Policy Lens
-image: /src/content/uploads/image-0009.jpg
+image: /src/content/posts/images/image-0009.jpg
 tags:
   - post
 rating: 5
