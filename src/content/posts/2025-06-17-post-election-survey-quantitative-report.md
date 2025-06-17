@@ -7,6 +7,8 @@ tags:
   - post
 rating: 5
 ---
+[See Full PDF](https://www.dropbox.com/scl/fi/hhjeq16i6paitcr7bvl5o/Post-Election-Survey_Quantitative-Report_Final-Draft.pdf?rlkey=k69sbgpxpptoi31j9c9kn4w3z&st=sr4vifgc&dl=0)
+
 ![](/src/content/uploads/post-election-survey_quantitative-report_final-draft_page-0002.jpg)
 
 ![](/src/content/uploads/post-election-survey_quantitative-report_final-draft_page-0003.jpg)
@@ -72,8 +74,6 @@ rating: 5
 ![](/src/content/uploads/post-election-survey_quantitative-report_final-draft_page-0033.jpg)
 
 ![](/src/content/uploads/post-election-survey_quantitative-report_final-draft_page-0034.jpg)
-
-
 
 ![](/src/content/uploads/post-election-survey_quantitative-report_final-draft_page-0035.jpg)
 
