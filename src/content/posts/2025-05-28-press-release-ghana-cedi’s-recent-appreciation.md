@@ -24,7 +24,7 @@ A key factor in the cedi’s stabilization has been Ghana’s strategic use of g
 
 Indeed, the central bank’s direct forex market interventions have been massive: in **April 2025 alone, BoG injected $490 million** into the foreign exchange market to ease dollar shortages and strengthen the cedi. Reports further indicate sizable interventions in other months – for example, about **$264 million was injected in March 2025** as part of the stabilization strategy. Cumulatively, nearly **$1 billion** is estimated to have been supplied to the forex market by the government and central bank between January and May 2025, a clear sign of determination to shore up the currency. These combined measures – gold-backed FX swaps and direct dollar sales – have undeniably helped the cedi rally in recent months, quelling speculation and improving market confidence. APL acknowledges the positive impact of these tactical moves, while urging transparency about their scale and finite nature.
 
-![](/src/content/uploads/img39.jpg)
+![](/src/content/posts/images/img39.jpg)
 
 *Figure 1: Domestic Gold Purchase Programme (DGPP) May 2023 – April 2025\
 Source: Data from Bank of Ghana (2025)*

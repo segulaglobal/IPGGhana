@@ -50,7 +50,7 @@ In summary, Ghana's fuel prices are a product of global market forces, the stren
 
 ## Impact on Consumers: Regressivity and Risk to Disinflation Gains
 
-![](/src/content/uploads/image-0054.jpg)
+![](/src/content/posts/images/image-0054.jpg)
 
 **Figure**: Ghana's year-on-year inflation peaked at 54.1% in Dec 2022 amid a currency crisis, but eased to about 21% by April 2025 as the cedi stabilised and fuel prices fell. This hard-won disinflation provided relief to consumers. A sudden new fuel levy, however, threatens to undo these gains if global oil prices rebound or the cedi weakens, driving pump prices back up.
 
