@@ -2,8 +2,8 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "src/content/uploads"        # Where uploaded images will be stored in your repo
-public_folder: "/src/content/uploads"      # How those images will be accessed on the front-end
+media_folder: "src/content/posts/images"        # Where uploaded images will be stored in your repo
+public_folder: "/src/content/posts/images"      # How those images will be accessed on the front-end
 
 collections:
   - name: "blog"
