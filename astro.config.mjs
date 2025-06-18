@@ -2,7 +2,7 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
-// import sanity from '@sanity/astro';
+import sanity from '@sanity/astro';
 import sitemap from '@astrojs/sitemap';
 import netlify from '@astrojs/netlify';
 
@@ -14,7 +14,13 @@ export default defineConfig({
   integrations: [
     react(),
     sitemap(),
-    
+    sanity({
+      projectId: "42txqeur",
+      dataset: "production",
+      useCdn: false, // for static builds
+      apiVersion: "2025-06-18", // Current date to access latest API version
+      studioBasePath: '/admin'
+    })
   ],
 
   vite: {
