@@ -1,38 +1,81 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
-import BlogCard from "../../components/BlogCard.astro";
-import { getCollection } from "astro:content";
-import type { CollectionEntry } from "astro:content";
+// import Header from "../../components/shared/Header";
+import HeroImg from "../../assets/product-hero.png";
 
-const posts: CollectionEntry<"posts">[] = (await getCollection("posts")).sort(
-  (a: CollectionEntry<"posts">, b: CollectionEntry<"posts">) =>
-    b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+// Sanity client + image url builder
+import { sanityClient } from "sanity:client";
+import imageUrlBuilder from "@sanity/image-url";
+
+import type { SanityDocument } from "@sanity/client";
+
+// Define function to generate image URLs
+const urlFor = (source: any) =>
+  source?.asset?.url ? imageUrlBuilder(sanityClient).image(source.asset).auto("format").fit("max").url() : null;
+
+// Fetch blog posts with images
+const POSTS_QUERY = `*[
+  _type == "post"
+  && defined(slug.current)
+] | order(publishedAt desc)[0...12]{
+  _id, 
+  title, 
+  slug, 
+  publishedAt,
+  mainImage{asset->{url}} // 👈 Ensure images are fetched
+}`;
+const posts: SanityDocument[] = await sanityClient.fetch(POSTS_QUERY);
 ---
 
-<MainLayout title="IPG Ghana | Newsletter">
-  <!-- <Preloader></Preloader> -->
+<MainLayout
+  title="Blog"
+  description="Welcome to the blog page where you can find various articles and posts."
+>
+  <!-- <Header
+    backgroundImage={HeroImg.src}
+    isIndexPage={true}
+    title="NewsRoom"
+    subtitle="Latest Updates, News & Blogs"
+  /> -->
 
-  <section class="pt-40 pb-48">
-    <div class="container wrapper">
-      <h2 class="mb-8 text-4xl tracking-tight font-extrabold text-gray-900">
-        All Blogs & News
-      </h2>
-      <!-- Main Grid -->
-      <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {posts.map((article) => <BlogCard post={article} />)}
-      </div>
+  <!-- Blog section from Sanity -->
+  <section class="section-blog pt-20 pb-60" id="section-blog">
+    <div class="sm-container">
+      <h2 class="mb-12 text-4xl tracking-tight font-extrabold text-gray-900" data-aos="fade" data-aos-delay="50" data-aos-duration="500">Latest News & Updates</h2>
 
-      <!-- Pagination -->
-      <!-- <div class="flex justify-between mt-10">
-                <a href="#" class="inline-block bg-indigo-100 px-3 py-2 hover:bg-indigo-600 hover:text-white rounded-lg">
-                  Previous
-                </a>
-                <a href="#"
-                 class="inline-block bg-indigo-100 px-3 py-2 hover:bg-indigo-600 hover:text-white rounded-lg">
-                  Next
-                </a>
-              </div> -->
+      <ul class="flex flex-col gap-y-4">
+        <div class="grid gap-6 grid-cols-1">
+          {posts.map((post) => (
+            <li class="">
+              <a href={`/blog/${post.slug.current}`} class="flex flex-col md:flex-row rounded-lg shadow-sm border-gray-700 bg-white hover:bg-gray-200 hover:-translate-y-2 transition-all duration-300 ease-in-out overflow-clip">
+                
+                {/* <!-- Blog Image --> */}
+                {post.mainImage?.asset?.url ? (
+                  <img 
+                    src={post.mainImage.asset.url} 
+                    alt={post.title} 
+                    class="w-full md:w-48 h-auto object-cover rounded-lg" 
+                  />
+                ) : (
+                  <img 
+                    src="/fallback-image.jpg" 
+                    alt="Default Blog Image" 
+                    class="w-full md:w-48 h-auto object-cover rounded-lg" 
+                  />
+                )}
+
+                {/* <!-- Blog Details --> */}
+                <div class="p-4 flex flex-col justify-between">
+                  <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{post.title}</h2>
+                  <p class="mb-3 font-bold text-gray-600">
+                    {new Date(post.publishedAt).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
+                  </p>
+                </div>
+              </a>
+            </li>
+          ))}
+        </div>
+      </ul>
     </div>
   </section>
 </MainLayout>

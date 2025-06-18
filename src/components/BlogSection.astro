@@ -1,37 +1,111 @@
 ---
-import BlogCard from "../components/BlogCard.astro";
+import { Image } from "astro:assets";
+import { sanityClient } from "sanity:client";
+import type { SanityDocument } from "@sanity/client";
 
-import { HOMEPAGE_ARTICLES_LIMIT } from "../constants";
+// Fallback image if Sanity post doesn't have one
+// import BlogFallback from "../assets/blog-1.png";
 
-import { getCollection } from "astro:content";
-import type { CollectionEntry } from "astro:content";
+// Define the shape of a post
+type BlogPost = {
+  _id: string;
+  title: string;
+  slug: { current: string };
+  publishedAt: string;
+  mainImage?: {
+    asset?: {
+      url: string;
+    };
+  };
+};
 
-const posts: CollectionEntry<"posts">[] = (await getCollection("posts")).sort(
-  (a: CollectionEntry<"posts">, b: CollectionEntry<"posts">) =>
-    b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+// Fetch latest 4 posts
+const POSTS_QUERY = `*[_type == "post" && defined(slug.current)] | order(publishedAt desc)[0...4] {
+  _id,
+  title,
+  slug,
+  publishedAt,
+  mainImage {
+    asset -> {
+      url
+    }
+  }
+}`;
+const posts: BlogPost[] = await sanityClient.fetch(POSTS_QUERY);
 
-const mostRecentArticle: CollectionEntry<"posts"> = posts[0];
-const otherArticles: CollectionEntry<"posts">[] = posts.slice(1);
+// Utility: fallback image if Sanity doesn't return one
+const getImageUrl = (post: BlogPost) =>
+  post?.mainImage?.asset?.url ?? BlogFallback.src;
+
+// Utility: nicely formatted date
+const formatDate = (date: string) =>
+  new Date(date).toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
 ---
+<section class="section-blog" id="section-blog">
+  <div class="container wrapper">
+    <h1 class="mb-12 text-4xl tracking-tight font-extrabold text-gray-900 text-center" data-aos="fade" data-aos-delay="50" data-aos-duration="500">News & Updates</h1>
 
-<!-- ==================== Section News and Blog ============================= -->
-<section class="section-news py-20">
-  <div class="container wrapper flex flex-col items-center">
-    <h2
-      class="heading-secondary text-3xl text-center uppercase font-bold mb-12"
-    >
-      News &amp; Blog
-    </h2>
-    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-      {
-        otherArticles
-          .slice(0, HOMEPAGE_ARTICLES_LIMIT)
-          .map((article) => <BlogCard post={article} />)
-      }
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+
+      <!-- Featured big post (first one) -->
+      {posts.length > 0 && (
+        <a
+          href={`/blog/${posts[0].slug.current}`}
+          class="flex flex-col items-center rounded-lg shadow-sm md:flex-row border-gray-700 bg-white hover:bg-gray-200 hover:-translate-y-2 transition-all duration-300 ease-in-out overflow-hidden md:col-span-2" data-aos="fade-up" data-aos-duration="800" data-aos-delay="50"
+        >
+          <img
+            src={getImageUrl(posts[0])}
+            alt={posts[0].title}
+            class="object-cover w-full rounded-t-lg md:h-full md:w-92 md:rounded-none"
+          />
+          <div class="flex flex-col justify-between p-4 pl-8 leading-normal">
+            <div class="grid grid-cols-2 mb-3">
+              <p class="font-bold text-gray-400">News</p>
+              <p class="font-bold text-gray-400 place-items-end">{formatDate(posts[0].publishedAt)}</p>
+            </div>
+            <h3 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+              {posts[0].title}
+            </h3>
+            {/* <p class="text-gray-"> */}
+              {/* {posts.description} */}
+            {/* </p> */}
+            <p class="mb-4 text-sm text-gray-700">Read more →</p>
+          </div>
+        </a>
+      )}
+
+      <!-- Remaining 3 smaller posts -->
+      <div class="bg-white rounded-lg shadow-sm p-2">
+        {posts.slice(1).map((post) => (
+          <a
+            href={`/blog/${post.slug.current}`}
+            class="p-2 rounded-lg flex items-center flex-row border-gray-700 hover:bg-gray-200 transition-all duration-300 ease-in-out mb-4 last:mb-0" data-aos="fade-up" data-aos-duration="800" data-aos-delay="50"
+          >
+            <img
+              src={getImageUrl(post)}
+              alt={post.title}
+              class="object-cover h-24 w-24 rounded-xl mr-4"
+            />
+            <div class="flex flex-col justify-between leading-normal">
+              <h3 class="mb-2 text-l font-bold tracking-tight text-gray-900">{post.title}</h3>
+              <p class="mb-3 font-normal text-gray-600 text-xs">{formatDate(post.publishedAt)}</p>
+            </div>
+          </a>
+        ))}
+      </div>
     </div>
-    <a href="/blog" class="btn btn-primary mt-12">More News</a>
+
+    <a href="/blog" class="btn btn-secondary mt-16">View all &nearrow;</a>
   </div>
 </section>
 
-<!-- end of news and blog -->
+<style lang="scss">
+.section-blog {
+  background-color: var(--clr-white);
+  padding: 5rem 0;
+}
+</style>
