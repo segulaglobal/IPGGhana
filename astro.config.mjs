@@ -14,13 +14,7 @@ export default defineConfig({
   integrations: [
     react(),
     sitemap(),
-    sanity({
-      projectId: "42txqeur",
-      dataset: "production",
-      useCdn: false, // for static builds
-      apiVersion: "2025-06-18", // Current date to access latest API version
-      studioBasePath: '/admin'
-    })
+    
   ],
 
   vite: {
