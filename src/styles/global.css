@@ -42,5 +42,5 @@ p {
   line-height: 2;
 }
 p:not([class=""]) {
-  margin-bottom: 3rem !important;
+  /* margin-bottom: 3rem !important; */
 }

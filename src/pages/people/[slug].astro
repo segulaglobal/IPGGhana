@@ -60,7 +60,7 @@ export async function getStaticPaths() {
           <p class="pt-4 text-gray-600 mb-8">{person.expertise}</p>
 
           <!-- PortableText Bio -->
-          <div class="prose overflow-visible relative mb-8 mx-auto">
+          <div class="prose max-w-none">
             {Array.isArray(person.bio) && <PortableText value={person.bio} />}
           </div>
 
