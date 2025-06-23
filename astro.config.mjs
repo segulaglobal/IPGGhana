@@ -29,6 +29,4 @@ export default defineConfig({
       external: ['flowbite'], // Ensure Flowbite loads properly
     },
   },
-  site: 'https://africapolicylens.com',
-  integrations: [sitemap()],
 });
