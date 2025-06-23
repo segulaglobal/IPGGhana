@@ -65,11 +65,12 @@ const components = {
       <img src={pubImageUrl} alt={publication.title} class="max-w-full rounded-xl text-center mb-12 mx-auto" width="550" height="310" />
     )}
 
-    <div class="blog-content">
+    <div class="prose prose-h1:font-bold prose-h1:text-xl prose-a:text-blue-600 prose-p:text-justify prose-img:rounded-xl
+  prose-headings:underline max-w-none">
       {Array.isArray(publication.body) && <PortableText value={publication.body} components={components} />}
     </div>
 
-    <a href="/publications/#section-publications" class="btn-sm btn-secondary mt-20">&larr; Back to Publications</a>
+    <a href="/publications/#section-publications" class="btn btn-secondary mt-20">&larr; Back to Publications</a>
   </div>
 </BlogLayout>
 
@@ -90,7 +91,5 @@ const components = {
     margin-bottom: 1.5rem;
   }
 
-  .blog-content p {
-    margin-bottom: 1.5rem;
-  }
+  
 </style>

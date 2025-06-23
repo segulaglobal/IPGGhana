@@ -70,39 +70,14 @@ const components = {
     )}
 
     <!-- Blog Content -->
-    <div class="blog-content">
+    <div class="blog-content prose lg:prose-lg prose-slate ">
       {Array.isArray(post.body) && <PortableText value={post.body} components={components} />}
     </div>
 
-<<<<<<< HEAD
-
-
-<MainLayout title={'Africa Policy Lens | ' + post.data.title}>
-    <section class="py-48">
-        <div class="blog-container wrapper">
-            <h1 class="text-5xl text-teal-900 font-bold mb-8 mt-8">{post.data.title}</h1>
-            <Image
-                src={post.data.image}
-                alt={post.data.title}
-                width={1024}
-                height={600 / 1.5}
-                class="w-full object-cover mb-12"
-                />
-
-                <div class="prose max-w-none prose-xl overflow-visible relative mb-20 mx-auto">
-                    <Content />
-                </div>
-
-                <a href="/blog" class="btn btn-secondary">&leftarrow; Back</a>
-        </div>
-    </section> 
-</MainLayout>
-=======
     <!-- Back to Blogs button -->
     <a href="/blog/#section-blog" class="btn btn-secondary mt-20">Back to Blogs</a>
   </div>
 </BlogLayout>
->>>>>>> development
 
 
 
@@ -110,12 +85,15 @@ const components = {
 
 
 
-
+<style lang="scss">
     p {
         margin-bottom: 2rem;
     }
 
-<style lang="scss">
+    h1,h2,h3 {
+      font-weight: bolder;
+    }
+
   .blog-container {
     padding-top: 6rem;
     padding-bottom: 12rem;
