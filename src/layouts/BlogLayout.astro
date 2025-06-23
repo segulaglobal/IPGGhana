@@ -1,74 +1,58 @@
 ---
+
 import "../styles/global.css";
+import Footer from "../components/Footer.astro";
+import Navigation from "../components/NavBar.astro";
+
 interface Props {
-  title?: string;
-  description?: string;
-  image?: string;
+	title?: string;
+	description?: string;
+	image?: string;
 }
 
-import Footer from "../components/Footer.astro";
-import NavBar from "../components/NavBar.astro";
-
 const {
-  title,
-  description = "At the Africa Policy Lens, we believe that data-driven insights and informed policy decisions are the foundation of national progress, and our commitment to transparency, accountability, and research-driven advocacy sets us apart as a thought leader in governance and economic reforms.",
-  image = "/images/band.jpg",
-} = Astro.props;
+	title = "Africa Policy Lens, we believe that data-driven insights and informed policy decisions are the foundation of national progress,",
+	description = "Africa Policy Lens, we believe that data-driven insights and informed policy decisions are the foundation of national progress, and our commitment to transparency, accountability, and research-driven advocacy sets us apart as a thought leader in governance and economic reforms.",
+	image = "/images/logo.png"
+} = Astro.props
 ---
 
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content=" {{ description }} " />
-    <meta name="robots" content="index, follow" />
-
-    <!-- {# social media sharing #} -->
-    <meta property='og:{{ title }}' content='Title of the article'/>
-    <meta property='og:{{ image }}' content='//media.example.com/ 1234567.jpg'/>
-    <meta property='og:{{ description }}' content='Description that will show in the preview'/>
-    <meta property='og:{{ post.url }}' content='//www.example.com/URL of the article'/>
-    <title>{title}</title>
-
-    <!-- main css file -->
-    <link rel="stylesheet" href="/css/main.css">
-
-        <!-- Google Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-          rel="stylesheet"
-        />
-    
-        <!-- Font-awesome CDN -->
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-          integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-          crossorigin="anonymous"
-          referrerpolicy="no-referrer"
-        />
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta http-equiv="content-language" content="en" />
+		<meta property="og:site_name" content="Africa Policy Lens" />
+		<meta name="generator" content={Astro.generator} />
+		<!-- Sitemap -->
+		<link rel="sitemap" href="/sitemap-index.xml" />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={image} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={image} />
 
 
 
-</head>
-<body>
+		<!-- Fontawesome cdn  -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	</head>
+	<body>
+		
+        <div class="sm-container">
+            <!-- So the main content goes here -->
+                <slot />
+        </div>
 
-    <NavBar />
-
-    <slot />
-
-    <Footer />
-
-     <!-- Javascript goes here -->
-     <script src="./../js/Navbar.js"></script>
-
-    <script>
-        
-    </script>
-    
-</body>
+		<!-- Footer -->
+		<Footer />
+	</body>
 </html>
+

@@ -27,6 +27,18 @@ section {
 
 
 
+/* Smaller container for blogs */
+.sm-container {
+    width: 100%;
+    max-width: 50rem;
+    padding: 0 2rem;
+    margin-inline: auto;
+}
+
+
+
+
+
 
 
 /* =============================== */

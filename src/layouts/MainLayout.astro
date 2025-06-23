@@ -10,10 +10,10 @@ import Footer from "../components/Footer.astro";
 import NavBar from "../components/NavBar.astro";
 
 const {
-  title,
-  description = "At the Africa Policy Lens, we believe that data-driven insights and informed policy decisions are the foundation of national progress, and our commitment to transparency, accountability, and research-driven advocacy sets us apart as a thought leader in governance and economic reforms.",
-  image = "/images/band.jpg",
-} = Astro.props;
+	title = "Africa Policy Lens, we believe that data-driven insights and informed policy decisions are the foundation of national progress,",
+	description = "Africa Policy Lens, we believe that data-driven insights and informed policy decisions are the foundation of national progress, and our commitment to transparency, accountability, and research-driven advocacy sets us apart as a thought leader in governance and economic reforms.",
+	image = "/images/logo.png"
+} = Astro.props
 ---
 
 <!doctype html>
@@ -25,6 +25,7 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <meta property="og:image" content={image} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <title>{title}</title>
 
     <!-- Main Stylesheet -->

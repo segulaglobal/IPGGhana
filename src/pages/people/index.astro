@@ -1,53 +1,81 @@
 ---
-import { Image } from "astro:assets";
 import MainLayout from "../../layouts/MainLayout.astro";
-import TeamCard from "../../components/TeamCard.astro";
 
-import { getCollection } from "astro:content";
-import type { CollectionEntry } from "astro:content";
+// Sanity client + image URL builder
+import { sanityClient } from "sanity:client";
+import imageUrlBuilder from "@sanity/image-url";
+import type { SanityDocument } from "@sanity/client";
 
+<<<<<<< HEAD
 const allTeams: CollectionEntry<"teams">[] = (await getCollection("teams")).sort((a:CollectionEntry<'teams'>, b:CollectionEntry<'teams'>) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
+=======
+// Set up the image URL builder
+const urlFor = (source: any) =>
+  source?.asset?._ref ? imageUrlBuilder(sanityClient).image(source).auto("format").fit("max").url() : null;
+
+// Query people documents from Sanity
+const PEOPLE_QUERY = `*[_type == "people" && defined(slug.current)] | order(_createdAt desc){
+  _id,
+  name,
+  slug,
+  role,
+  institution,
+  expertise,
+  image
+}`;
+
+const people: SanityDocument[] = await sanityClient.fetch(PEOPLE_QUERY);
+>>>>>>> development
 ---
 
-<MainLayout>
-  <!-- This is hero section of the People page -->
+<MainLayout title="People" description="Meet the distinguished team at Africa Policy Lens.">
+  <!-- Hero Section -->
   <section class="section-hero pt-20 md:pt-8">
     <div class="container wrapper">
       <div class="h-full flex flex-col text-center items-center justify-center">
-        <h1
-          class="my-5 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl animate__animated animate__fadeInUp"
-        >
+        <h1 class="my-5 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl animate__animated animate__fadeInUp">
           Meet the Team
         </h1>
-        <p
-          class="mb-8 text-lg font-normal text-gray-200 lg:text-xl sm:px-16 xl:px-48 animate__animated animate__fadeInUp"
-        >
-        Africa Policy Lens is led by a team of distinguished fellows from academia and various professional fields, each contributing expertise in governance, policy analysis, economics, law, and public sector development.
+        <p class="mb-8 text-lg font-normal text-gray-200 lg:text-xl sm:px-16 xl:px-48 animate__animated animate__fadeInUp">
+          Africa Policy Lens is led by a team of distinguished fellows from academia and various professional fields, each contributing expertise in governance, policy analysis, economics, law, and public sector development.
         </p>
       </div>
     </div>
   </section>
 
-  <section class="py-36">
+  <!-- People Grid -->
+  <section class="py-36" id="fellows">
     <div class="container wrapper">
       <h2 class="mb-16 text-4xl tracking-tight font-extrabold text-gray-900 text-center animate__animated animate__fadeInUp">
         Our Fellows
       </h2>
       <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 animate__animated animate__fadeInUp">
-        {
-          allTeams.map((team) => (
-            <TeamCard team={team} />
-          ))
-        }
+        {people.map((person) => (
+          <a
+            href={`/people/${person.slug.current}`}
+            class="people bg-white shadow-md rounded-xl overflow-hidden transform transition hover:-translate-y-1 hover:shadow-xl"
+          >
+            <img
+              src={urlFor(person.image) ?? "/fallback.jpg"}
+              alt={person.name}
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-4">
+              <div class="people-text">
+                <h3 class="text-xl font-bold">{person.name}</h3>
+                <p class="text-gray-600">{person.role}</p>
+                <p class="text-sm text-gray-500">{person.institution}</p>
+              </div>
+            </div>
+          </a>
+        ))}
       </div>
     </div>
   </section>
 </MainLayout>
-<!-- End of hero section of the People page -->
 
 <style>
-  /* Section hero */
   .section-hero {
     width: 100%;
     height: 50vh;
@@ -55,61 +83,23 @@ const allTeams: CollectionEntry<"teams">[] = (await getCollection("teams")).sort
     background-size: cover;
     background-position: top;
   }
-  /* End of section hero */
 
   .people {
     text-align: center;
     width: 100%;
     transition: 0.3s;
+  }
 
-    &:hover {
-      transform: scale(0.95);
-    }
-    &:hover > .people-social {
-      transform: scale(1.1);
+  .people-text {
+    margin-top: 1rem;
+  }
 
-      a {
-        color: var(--clr-white);
-        background-color: var(--clr-gray-light);
-      }
-    }
+  .people-text h3 {
+    font-weight: bold;
+    font-size: 1.25rem;
+  }
 
-    .people-text {
-      margin: 1rem 0;
-
-      h3 {
-        font-weight: bold;
-        font-size: 1.5rem;
-      }
-      p {
-        color: #909090;
-      }
-    }
-    /* people social icons */
-    .people-social {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: 0.3s;
-
-      li {
-        &:not(:last-child) {
-          margin-right: 1rem;
-        }
-      }
-      .people-link {
-        display: flex;
-        width: 3rem;
-        height: 3rem;
-        border-radius: 0.5rem;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid var(--clr-gray-light);
-        color: var(--clr-gray-light);
-        background-color: var(--clr-white);
-        transition: 0.3s;
-
-      }
-    }
+  .people-text p {
+    color: #606060;
   }
 </style>

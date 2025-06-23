@@ -33,3 +33,31 @@
     color: var(--clr-white);
 }
 
+
+
+
+
+
+/* ========== Share Button ============ */
+.share {
+    color: #555;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    padding: 0.1rem 1rem;
+    border-radius: 1rem;
+    transition: 0.3s;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.share:hover,
+.share:focus {
+  background-color: rgba(219, 162, 40, 0.36);
+  border: 1px solid #dba328;
+  color: var(--clr-yellow);
+}
+
+.share p {
+  margin: 0;
+  margin-right: 5px;
+}

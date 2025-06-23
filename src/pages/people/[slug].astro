@@ -1,67 +1,88 @@
 ---
-import { getCollection } from "astro:content";
-import type { CollectionEntry } from "astro:content";
 import MainLayout from "../../layouts/MainLayout.astro";
-import { Image } from "astro:assets";
+import { PortableText } from "astro-portabletext";
+import type { SanityDocument } from "@sanity/client";
+import { sanityClient } from "sanity:client";
+import imageUrlBuilder from "@sanity/image-url";
+import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
-export const getStaticPaths = async () => {
-  const allTeams = await getCollection("teams"); // Changed from "people" to "teams"
-  return allTeams.map((team) => ({
-    params: { slug: team.slug },
-    props: { team },
-  }));
-};
+// Set up image URL builder
+const urlFor = (source: SanityImageSource) =>
+  source?.asset?._ref ? imageUrlBuilder(sanityClient).image(source).auto("format").fit("max").url() : null;
 
-type Props = {
-  team: CollectionEntry<"teams">; // Changed from "people" to "teams"
-};
+// Query a single person by slug
+const PERSON_QUERY = `*[_type == "people" && slug.current == $slug][0]{
+  name,
+  slug,
+  role,
+  institution,
+  expertise,
+  email,
+  linkedin,
+  image,
+  bio
+}`;
 
-const { team } = Astro.props;
-const { Content } = await team.render();
+const person: SanityDocument = await sanityClient.fetch(PERSON_QUERY, Astro.params);
+
+// Generate static paths for all people
+export async function getStaticPaths() {
+  const SLUGS_QUERY = `*[_type == "people" && defined(slug.current)]{ "slug": slug.current }`;
+  const slugs = await sanityClient.fetch(SLUGS_QUERY);
+  return slugs.map(({ slug }) => ({ params: { slug } }));
+}
 ---
 
-<MainLayout>
+<MainLayout title={person.name}>
   <section class="py-36 section-person">
     <div class="container wrapper">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Image Column -->
         <div class="img">
-          <Image
-            src={team.data.image}
-            alt={team.data.name}
-            width={600}
-            height={800}
-            class="w-full h-80 object-cover"
-          />
+          {person.image && (
+            <img
+              src={urlFor(person.image)}
+              alt={person.name}
+              class="w-full h-80 object-cover rounded-xl"
+            />
+          )}
         </div>
+
+        <!-- Text Column -->
         <div class="text md:col-span-2">
           <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">
-            {team.data.name}
+            {person.name}
           </h2>
           <p class="mb-4 text-green-500">
-            {team.data.profession} | {team.data.institution}
+            {person.role} | {person.institution}
           </p>
-          <hr>
-          <p class="pt-4 text-gray-400">{team.data.expertise}</p>
+          <hr />
+          <p class="pt-4 text-gray-600 mb-8">{person.expertise}</p>
 
-          <!-- Their Bio Goes here -->
+          <!-- PortableText Bio -->
           <div class="prose overflow-visible relative mb-8 mx-auto">
-            <Content />
+            {Array.isArray(person.bio) && <PortableText value={person.bio} />}
           </div>
 
-          <!-- Connect with him -->
-          <ul class="social-list">
-            <li class="social-item">
-              <a href={'mailto:' + team.data.email} class="social-link">
-                <i class="fa-solid fa-envelope"></i>
-              </a>
-            </li>
-            <li class="social-item">
-              <a href={team.data.linkedin} target="_blank" class="social-link">
-                <i class="fa-brands fa-linkedin-in"></i>
-              </a>
-            </li>
+          <!-- Contact Icons -->
+          <ul class="social-list mb-12">
+            {person.email && (
+              <li class="social-item">
+                <a href={`mailto:${person.email}`} class="social-link" aria-label="Email">
+                  <i class="fa-solid fa-envelope"></i>
+                </a>
+              </li>
+            )}
+            {person.linkedin && (
+              <li class="social-item">
+                <a href={person.linkedin} target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+              </li>
+            )}
           </ul>
-          <a href="/people" class="btn btn-secondary">&leftarrow; Back</a>
+
+          <a href="/people#fellows" class="btn btn-secondary">&leftarrow; Back</a>
         </div>
       </div>
     </div>
@@ -69,39 +90,35 @@ const { Content } = await team.render();
 </MainLayout>
 
 <style>
-  .section-person {
-    .social-list {
-      display: flex;
-      margin-bottom: 5rem;
+  .section-person .social-list {
+    display: flex;
+  }
 
-      .social-item {
-        &:not(:last-child) {
-          margin-right: 1rem;
-        }
-      }
-      .social-link {
-        display: flex;
-        width: 4rem;
-        height: 4rem;
-        border-radius: 50%;
-        background-color: var(--clr-white);
-        color: var(--clr-black);
-        border: 1px solid var(--clr-black);
-        align-items: center;
-        justify-content: center;
-        transition: 0.3s;
+  .section-person .social-item:not(:last-child) {
+    margin-right: 1rem;
+  }
 
-        &:hover,
-        &:focus {
-          scale: 0.9;
-          background-color: var(--clr-black);
-          color: var(--clr-white);
-        }
-      }
-    }
+  .section-person .social-link {
+    display: flex;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: var(--clr-white);
+    color: var(--clr-black);
+    border: 1px solid var(--clr-black);
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+  }
 
-    p {
-      margin-bottom: 1rem;
-    }
+  .section-person .social-link:hover,
+  .section-person .social-link:focus {
+    scale: 0.9;
+    background-color: var(--clr-black);
+    color: var(--clr-white);
+  }
+
+  .section-person p {
+    margin-bottom: 1rem;
   }
 </style>

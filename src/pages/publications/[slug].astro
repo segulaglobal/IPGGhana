@@ -1,0 +1,96 @@
+---
+import BlogLayout from "../../layouts/BlogLayout.astro";
+import CopyButton from "../../components/CopyButton.astro";
+import { PortableText } from "astro-portabletext";
+import PortableTextImage from "../../components/PortableTextImage.astro";
+
+import type { SanityDocument } from "@sanity/client";
+import { sanityClient } from "sanity:client";
+import imageUrlBuilder from "@sanity/image-url";
+import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
+
+// Setup image URL builder
+const urlFor = (source: SanityImageSource) =>
+  source?.asset?.url ? imageUrlBuilder(sanityClient).image(source).auto("format").fit("max").url() : null;
+
+// Query single publication by slug
+const PUB_QUERY = `*[_type == "publication" && slug.current == $slug][0]{
+  title,
+  slug,
+  mainImage{asset->{url}},
+  body,
+  publishedAt
+}`;
+
+const publication = await sanityClient.fetch<SanityDocument>(PUB_QUERY, Astro.params) || {};
+
+const formattedDate = publication.publishedAt
+  ? new Date(publication.publishedAt).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    })
+  : "Unknown date";
+
+const pubImageUrl = publication.mainImage?.asset?.url || null;
+
+// Static paths for all publication slugs
+export async function getStaticPaths() {
+  const SLUGS_QUERY = `*[_type == "publication" && defined(slug.current)]{ "slug": slug.current }`;
+  const slugs = await sanityClient.fetch(SLUGS_QUERY);
+  return slugs.map(({ slug }) => ({ params: { slug } }));
+}
+
+const components = {
+  type: {
+    image: PortableTextImage,
+  },
+};
+---
+
+<BlogLayout title={`APL | ${publication.title}`}>
+  <div class="blog-container">
+    <h1 class="blog-title">{publication.title}</h1>
+
+    <div class="grid grid-cols-2 mb-4">
+      <div>
+        <h6 class="date text-gray-400 font-medium text-sm">{formattedDate}</h6>
+      </div>
+      <div class="place-items-end">
+        <CopyButton url={`https://yourdomain.com/publications/${publication.slug}`} />
+      </div>
+    </div>
+
+    {pubImageUrl && (
+      <img src={pubImageUrl} alt={publication.title} class="max-w-full rounded-xl text-center mb-12 mx-auto" width="550" height="310" />
+    )}
+
+    <div class="blog-content">
+      {Array.isArray(publication.body) && <PortableText value={publication.body} components={components} />}
+    </div>
+
+    <a href="/publications/#section-publications" class="btn-sm btn-secondary mt-20">&larr; Back to Publications</a>
+  </div>
+</BlogLayout>
+
+
+
+
+
+<style lang="scss">
+  .blog-container {
+    padding-top: 6rem;
+    padding-bottom: 12rem;
+  }
+
+  .blog-title {
+    font-size: clamp(2.5rem, 3vw, 3.5rem);
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+
+  .blog-content p {
+    margin-bottom: 1.5rem;
+  }
+</style>
