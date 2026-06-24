@@ -1,5 +1,7 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
+import wisdomImage from "../../assets/IMG_0152.JPG.jpeg";
+import { Image } from "astro:assets";
 
 // Sanity client + image URL builder
 import { sanityClient } from "sanity:client";
@@ -10,8 +12,8 @@ import type { SanityDocument } from "@sanity/client";
 const urlFor = (source: any) =>
   source?.asset?._ref ? imageUrlBuilder(sanityClient).image(source).auto("format").fit("max").url() : null;
 
-// Query people documents from Sanity
-const PEOPLE_QUERY = `*[_type == "people" && defined(slug.current)] | order(_createdAt desc){
+// Query people documents from Sanity (excluding the specified fellows)
+const PEOPLE_QUERY = `*[_type == "people" && defined(slug.current) && !(slug.current in ["prof-isaac-boadi", "dr-frank-bannor", "dr-kwaku-agyeman-budu"])] | order(_createdAt desc){
   _id,
   name,
   slug,
@@ -21,7 +23,21 @@ const PEOPLE_QUERY = `*[_type == "people" && defined(slug.current)] | order(_cre
   image
 }`;
 
-const people: SanityDocument[] = await sanityClient.fetch(PEOPLE_QUERY);
+const sanityPeople: SanityDocument[] = await sanityClient.fetch(PEOPLE_QUERY);
+
+const wisdomEdemGomashie = {
+  _id: "wisdom-edem-gomashie",
+  name: "Ing. Wisdom Edem Gomashie",
+  slug: { current: "ing-wisdom-edem-gomashie" },
+  role: "Mining Engineer | Policy Analyst | Natural Resource Governance Specialist",
+  institution: "African Policy Lens",
+  expertise: "Mineral resource governance, mining policy reform, local content development, and sustainable mining practices in Africa",
+  image: wisdomImage,
+  email: "Wissfarad@gmail.com",
+  linkedin: "https://www.linkedin.com/in/ing-wisdom-edem-gomashie-ma-msc-bsc-mwaimm-pe-ghie-73bab3109?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+};
+
+const people = [...sanityPeople, wisdomEdemGomashie];
 ---
 
 <MainLayout title="People" description="Meet the distinguished team at Africa Policy Lens.">
@@ -49,13 +65,25 @@ const people: SanityDocument[] = await sanityClient.fetch(PEOPLE_QUERY);
         {people.map((person) => (
           <a
             href={`/people/${person.slug.current}`}
-            class="people bg-white shadow-md rounded-xl overflow-hidden transform transition hover:-translate-y-1 hover:shadow-xl"
+            class="group people bg-white shadow-md rounded-xl overflow-hidden transform transition hover:-translate-y-1 hover:shadow-xl"
           >
-            <img
-              src={urlFor(person.image) ?? "/fallback.jpg"}
-              alt={person.name}
-              class="w-full h-64 object-cover"
-            />
+            <div class="w-full h-96 overflow-hidden">
+              {person._id === "wisdom-edem-gomashie" ? (
+                <Image
+                  src={person.image}
+                  alt={person.name}
+                  width={600}
+                  height={800}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              ) : (
+                <img
+                  src={urlFor(person.image) ?? "/fallback.jpg"}
+                  alt={person.name}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              )}
+            </div>
             <div class="p-4">
               <div class="people-text">
                 <h3 class="text-2xl font-bold">{person.name}</h3>

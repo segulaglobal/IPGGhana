@@ -6,7 +6,9 @@ const navItem = document.querySelectorAll(".nav-item");
 
 
 let showMenu = false;
-navButton.addEventListener("click", openMenu);
+if (navButton) {
+    navButton.addEventListener("click", openMenu);
+}
 // navList.addEventListener("click", openMenu);
 
 function click() {
@@ -16,23 +18,29 @@ function click() {
 
 function openMenu () {
     if(!showMenu) {
-        navButton.classList.add("close");
-        navList.classList.add("show");
-        navOverlay.classList.add("show");
-        navItem.forEach(item => {
-            item.classList.add("show");
-        });
+        if (navButton) navButton.classList.add("close");
+        if (navList) navList.classList.add("show");
+        if (navOverlay) navOverlay.classList.add("show");
+        if (navItem) {
+            navItem.forEach(item => {
+                item.classList.add("show");
+            });
+        }
         document.body.classList.add("remove-scrolling"); 
         // document.body.classList.add("no-scroll");
         showMenu = true;
     }else {
-        navButton.classList.remove("close");
-        navList.classList.remove("show");
-        navButton.classList.remove("show");
-        navOverlay.classList.remove("show");
-        navItem.forEach(item => {
-            item.classList.remove("show");
-        });
+        if (navButton) {
+            navButton.classList.remove("close");
+            navButton.classList.remove("show");
+        }
+        if (navList) navList.classList.remove("show");
+        if (navOverlay) navOverlay.classList.remove("show");
+        if (navItem) {
+            navItem.forEach(item => {
+                item.classList.remove("show");
+            });
+        }
         document.body.classList.remove("remove-scrolling"); 
         // document.body.classList.remove("no-scroll");
         showMenu = false;

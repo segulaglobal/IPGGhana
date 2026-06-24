@@ -5,6 +5,8 @@ import type { SanityDocument } from "@sanity/client";
 import { sanityClient } from "sanity:client";
 import imageUrlBuilder from "@sanity/image-url";
 import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import wisdomImage from "../../assets/IMG_0152.JPG.jpeg";
+import { Image } from "astro:assets";
 
 // Set up image URL builder
 const urlFor = (source: SanityImageSource) =>
@@ -23,13 +25,152 @@ const PERSON_QUERY = `*[_type == "people" && slug.current == $slug][0]{
   bio
 }`;
 
-const person: SanityDocument = await sanityClient.fetch(PERSON_QUERY, Astro.params);
+const wisdomEdemGomashie = {
+  _id: "wisdom-edem-gomashie",
+  name: "Ing. Wisdom Edem Gomashie",
+  slug: { current: "ing-wisdom-edem-gomashie" },
+  role: "Mining Engineer | Policy Analyst | Natural Resource Governance Specialist",
+  institution: "African Policy Lens",
+  expertise: "Mineral resource governance, mining policy reform, local content development, and sustainable mining practices in Africa",
+  image: wisdomImage,
+  email: "Wissfarad@gmail.com",
+  linkedin: "https://www.linkedin.com/in/ing-wisdom-edem-gomashie-ma-msc-bsc-mwaimm-pe-ghie-73bab3109?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+  bio: [
+    {
+      _key: "block1",
+      _type: "block",
+      style: "normal",
+      children: [
+        {
+          _key: "span1",
+          _type: "span",
+          marks: [],
+          text: "Ing. Wisdom Edem Gomashie is a Mining Engineer and policy specialist with over 8 years of experience spanning mining operations, regulatory systems, and extractive sector governance in Ghana. He is a registered member of the Ghana Institution of Engineering (GhIE) and the West African Institute of Mining, Metallurgy and Petroleum (WAIMM)."
+        }
+      ],
+      markDefs: []
+    },
+    {
+      _key: "block2",
+      _type: "block",
+      style: "normal",
+      children: [
+        {
+          _key: "span2",
+          _type: "span",
+          marks: [],
+          text: "Ing. Gomashie is currently pursuing a Doctor of Engineering (D-Eng) in Mining Engineering at UMaT. He holds a Master of Arts in Natural Resources Law from the University of Ghana, an MSc in Engineering Management, and a BSc in Mining Engineering (First Class Honours). He has also completed executive training in extractive governance through the African Centre for Energy Policy and has been admitted to the 2026 Executive Training on Minerals, Energy, Climate, and Sustainable Development by the Columbia Center on Sustainable Investment, Columbia University."
+        }
+      ],
+      markDefs: []
+    },
+    {
+      _key: "block3",
+      _type: "block",
+      style: "normal",
+      children: [
+        {
+          _key: "span3",
+          _type: "span",
+          marks: [],
+          text: "He previously worked with Gold Fields Ghana Limited (Tarkwa Mine) and Ghana Manganese Company, gaining practical experience in mine operations and production systems from 2016 – 2021."
+        }
+      ],
+      markDefs: []
+    },
+    {
+      _key: "block4",
+      _type: "block",
+      style: "normal",
+      children: [
+        {
+          _key: "span4",
+          _type: "span",
+          marks: [],
+          text: "From 2021 to 2025, he served as Special and Technical Assistant at the Ministry of Lands and Natural Resources, contributing to mining policy development, legislative review, and sector reforms. He concurrently served as an officer with the Minerals Commission of Ghana, contributing to small-scale mining reforms and the sustainable development of Ghana’s mineral resources."
+        }
+      ],
+      markDefs: []
+    },
+    {
+      _key: "block5",
+      _type: "block",
+      style: "normal",
+      children: [
+        {
+          _key: "span5",
+          _type: "span",
+          marks: [],
+          text: "Ing. Gomashie also serves as a Research Fellow at the Institute for Mineral Resource Investments and Governance (IMRIG) at the University of Mines and Technology, where he is tasked with research in mineral economics, investment policy, governance systems, and sustainable mineral-led development."
+        }
+      ],
+      markDefs: []
+    },
+    {
+      _key: "block6",
+      _type: "block",
+      style: "normal",
+      children: [
+        {
+          _key: "span6",
+          _type: "span",
+          marks: [],
+          text: "Ing. Gomashie also works as a Mining Consultant and a Fellow with the African Policy Lens."
+        }
+      ],
+      markDefs: []
+    },
+    {
+      _key: "block7",
+      _type: "block",
+      style: "normal",
+      children: [
+        {
+          _key: "span7",
+          _type: "span",
+          marks: [],
+          text: "His current works & advocacies are towards building a sustainable mining sector."
+        }
+      ],
+      markDefs: []
+    },
+    {
+      _key: "block8",
+      _type: "block",
+      style: "normal",
+      children: [
+        {
+          _key: "span8",
+          _type: "span",
+          marks: [],
+          text: "His professional interests focus on mineral resource governance, mining policy reform, local content development, and sustainable mining practices in Africa."
+        }
+      ],
+      markDefs: []
+    }
+  ]
+};
+
+let person: any = null;
+
+if (Astro.params.slug === "ing-wisdom-edem-gomashie") {
+  person = wisdomEdemGomashie;
+} else {
+  person = await sanityClient.fetch(PERSON_QUERY, Astro.params);
+}
+
+if (!person || ["prof-isaac-boadi", "dr-frank-bannor", "dr-kwaku-agyeman-budu"].includes(Astro.params.slug)) {
+  return Astro.redirect("/404");
+}
 
 // Generate static paths for all people
 export async function getStaticPaths() {
-  const SLUGS_QUERY = `*[_type == "people" && defined(slug.current)]{ "slug": slug.current }`;
+  const SLUGS_QUERY = `*[_type == "people" && defined(slug.current) && !(slug.current in ["prof-isaac-boadi", "dr-frank-bannor", "dr-kwaku-agyeman-budu"])]{ "slug": slug.current }`;
   const slugs = await sanityClient.fetch(SLUGS_QUERY);
-  return slugs.map(({ slug }) => ({ params: { slug } }));
+  return [
+    ...slugs.map(({ slug }) => ({ params: { slug } })),
+    { params: { slug: "ing-wisdom-edem-gomashie" } }
+  ];
 }
 ---
 
@@ -40,11 +181,21 @@ export async function getStaticPaths() {
         <!-- Image Column -->
         <div class="img">
           {person.image && (
-            <img
-              src={urlFor(person.image)}
-              alt={person.name}
-              class="w-full h-80 object-cover rounded-xl"
-            />
+            person._id === "wisdom-edem-gomashie" ? (
+              <Image
+                src={person.image}
+                alt={person.name}
+                width={800}
+                height={1000}
+                class="w-full h-[450px] object-cover rounded-xl shadow-md"
+              />
+            ) : (
+              <img
+                src={urlFor(person.image)}
+                alt={person.name}
+                class="w-full h-[450px] object-cover rounded-xl shadow-md"
+              />
+            )
           )}
         </div>
 
